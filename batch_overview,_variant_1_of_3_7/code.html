@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Batch Overview - SSC CGL 2025</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5805cc",
+                        "primary-light": "#7a2ee6",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#231a33",
+                        "text-main-light": "#130d1c",
+                        "text-main-dark": "#f0eef5",
+                        "text-sub-light": "#6b6675",
+                        "text-sub-dark": "#ada8b8",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(88, 5, 204, 0.05)',
+                        'card': '0 2px 8px rgba(0, 0, 0, 0.04)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col overflow-x-hidden shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Top Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 py-3 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main-light dark:text-text-main-dark">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex-1 px-4 text-center">
+<h1 class="text-lg font-bold leading-tight text-text-main-light dark:text-text-main-dark truncate">SSC CGL 2025</h1>
+<p class="text-xs font-medium text-primary dark:text-primary-light">Foundation Batch</p>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main-light dark:text-text-main-dark">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</header>
+<!-- Segmented Control / Tabs -->
+<div class="px-4 py-2 sticky top-[60px] z-10 bg-background-light dark:bg-background-dark">
+<div class="flex h-12 w-full items-center rounded-xl bg-[#ece6f4] dark:bg-[#2a2235] p-1">
+<!-- Tab 1: Subjects (Active) -->
+<label class="group relative flex flex-1 cursor-pointer h-full items-center justify-center overflow-hidden rounded-[10px] px-2 transition-all">
+<input checked="" class="peer invisible w-0 absolute" name="tab-view" type="radio" value="Subjects"/>
+<span class="absolute inset-0 bg-transparent peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:shadow-sm rounded-[10px] transition-all duration-200"></span>
+<span class="relative z-10 text-sm font-semibold text-text-sub-light dark:text-text-sub-dark peer-checked:text-primary dark:peer-checked:text-primary-light truncate transition-colors">Subjects</span>
+</label>
+<!-- Tab 2: Tests -->
+<label class="group relative flex flex-1 cursor-pointer h-full items-center justify-center overflow-hidden rounded-[10px] px-2 transition-all">
+<input class="peer invisible w-0 absolute" name="tab-view" type="radio" value="Tests"/>
+<span class="absolute inset-0 bg-transparent peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:shadow-sm rounded-[10px] transition-all duration-200"></span>
+<span class="relative z-10 text-sm font-semibold text-text-sub-light dark:text-text-sub-dark peer-checked:text-primary dark:peer-checked:text-primary-light truncate transition-colors">Tests</span>
+</label>
+<!-- Tab 3: Announcements -->
+<label class="group relative flex flex-1 cursor-pointer h-full items-center justify-center overflow-hidden rounded-[10px] px-2 transition-all">
+<input class="peer invisible w-0 absolute" name="tab-view" type="radio" value="Announcements"/>
+<span class="absolute inset-0 bg-transparent peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:shadow-sm rounded-[10px] transition-all duration-200"></span>
+<span class="relative z-10 text-sm font-semibold text-text-sub-light dark:text-text-sub-dark peer-checked:text-primary dark:peer-checked:text-primary-light truncate transition-colors">Updates</span>
+</label>
+</div>
+</div>
+<!-- Scrollable Content Area -->
+<main class="flex-1 flex flex-col gap-4 px-4 py-4 pb-24">
+<!-- Context Header -->
+<div class="flex items-center justify-between mt-1">
+<h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Your Subjects</h2>
+<span class="text-xs font-medium text-primary bg-primary/10 dark:text-primary-light dark:bg-primary/20 px-2 py-1 rounded-md">8 Active</span>
+</div>
+<!-- Subject Card 1: Maths -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-card hover:shadow-soft transition-all active:scale-[0.99] cursor-pointer border border-transparent dark:border-white/5">
+<div class="flex items-start gap-4">
+<!-- Icon Container -->
+<div class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined text-[28px]" data-alt="Mathematics icon showing calculator symbols">calculate</span>
+</div>
+<!-- Text Content -->
+<div class="flex flex-1 flex-col justify-center">
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">Mathematics</h3>
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[20px]">chevron_right</span>
+</div>
+<p class="mt-1 text-xs font-medium text-text-sub-light dark:text-text-sub-dark">12 New Videos • Live at 4 PM</p>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="flex items-center gap-3 mt-1">
+<div class="h-1.5 flex-1 overflow-hidden rounded-full bg-background-light dark:bg-white/10">
+<div class="h-full w-[45%] rounded-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold text-primary dark:text-primary-light">45%</span>
+</div>
+</div>
+<!-- Subject Card 2: Reasoning -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-card hover:shadow-soft transition-all active:scale-[0.99] cursor-pointer border border-transparent dark:border-white/5">
+<div class="flex items-start gap-4">
+<div class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-[28px]" data-alt="Reasoning icon showing a brain or puzzle">psychology</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">Reasoning</h3>
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[20px]">chevron_right</span>
+</div>
+<p class="mt-1 text-xs font-medium text-text-sub-light dark:text-text-sub-dark">Daily Practice Added</p>
+</div>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<div class="h-1.5 flex-1 overflow-hidden rounded-full bg-background-light dark:bg-white/10">
+<div class="h-full w-[15%] rounded-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold text-primary dark:text-primary-light">15%</span>
+</div>
+</div>
+<!-- Subject Card 3: English -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-card hover:shadow-soft transition-all active:scale-[0.99] cursor-pointer border border-transparent dark:border-white/5">
+<div class="flex items-start gap-4">
+<div class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">
+<span class="material-symbols-outlined text-[28px]" data-alt="English language icon showing letters">translate</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">General English</h3>
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[20px]">chevron_right</span>
+</div>
+<p class="mt-1 text-xs font-medium text-text-sub-light dark:text-text-sub-dark">Unit 4: Comprehension</p>
+</div>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<div class="h-1.5 flex-1 overflow-hidden rounded-full bg-background-light dark:bg-white/10">
+<div class="h-full w-[72%] rounded-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold text-primary dark:text-primary-light">72%</span>
+</div>
+</div>
+<!-- Subject Card 4: General Awareness -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-card hover:shadow-soft transition-all active:scale-[0.99] cursor-pointer border border-transparent dark:border-white/5">
+<div class="flex items-start gap-4">
+<div class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400">
+<span class="material-symbols-outlined text-[28px]" data-alt="General Awareness icon showing a globe">public</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">General Awareness</h3>
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[20px]">chevron_right</span>
+</div>
+<p class="mt-1 text-xs font-medium text-text-sub-light dark:text-text-sub-dark">Start your journey</p>
+</div>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<div class="h-1.5 flex-1 overflow-hidden rounded-full bg-background-light dark:bg-white/10">
+<div class="h-full w-[0%] rounded-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold text-text-sub-light dark:text-text-sub-dark">0%</span>
+</div>
+</div>
+<!-- Promo/Ad Card (Optional enhancement for EdTech) -->
+<div class="relative mt-2 overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary-light p-4 shadow-lg">
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="flex size-6 items-center justify-center rounded-full bg-white/20 text-white">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+</span>
+<p class="text-xs font-bold text-white uppercase tracking-wider">Live Mock Test</p>
+</div>
+<h3 class="text-lg font-bold text-white leading-tight">All India SSC CGL Mock Test starts in 2 hours.</h3>
+<button class="mt-2 w-fit rounded-lg bg-white px-4 py-2 text-xs font-bold text-primary shadow-sm hover:bg-gray-50">Register Now</button>
+</div>
+<!-- Abstract Pattern Background -->
+<div class="absolute -right-4 -top-12 size-32 rounded-full bg-white/10 blur-2xl" data-alt="Abstract white gradient circle"></div>
+<div class="absolute -bottom-8 right-8 size-24 rounded-full bg-white/10 blur-xl" data-alt="Abstract white gradient circle"></div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 z-30 flex h-[80px] w-full max-w-md items-center justify-around border-t border-black/5 dark:border-white/5 bg-surface-light dark:bg-surface-dark pb-3 shadow-[0_-5px_20px_rgba(0,0,0,0.03)]">
+<button class="group flex flex-col items-center gap-1 p-2 text-primary dark:text-primary-light">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">school</span>
+<span class="text-[10px] font-medium">Batch</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary-light transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">quiz</span>
+<span class="text-[10px] font-medium">Tests</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary-light transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">forum</span>
+<span class="text-[10px] font-medium">Doubts</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary-light transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

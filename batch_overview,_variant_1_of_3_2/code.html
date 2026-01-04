@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Batch Overview - Updates</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004d61","primary-light": "#006984",
+                        "secondary": "#ff8c00","background-light": "#f8f9fa","background-dark": "#121826",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2532",
+                        "text-main-light": "#1a202c",
+                        "text-main-dark": "#e2e8f0",
+                        "text-sub-light": "#718096",
+                        "text-sub-dark": "#a0aec0",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "body": ["Open Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 77, 97, 0.08)',
+                        'card': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                        'neumorph': '5px 5px 10px #d1d5db, -5px -5px 10px #ffffff',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col overflow-x-hidden shadow-2xl bg-background-light dark:bg-background-dark">
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main-light dark:text-text-main-dark">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex-1 px-4 text-center">
+<h1 class="text-lg font-display font-bold leading-tight text-text-main-light dark:text-text-main-dark truncate">SSC CGL 2025</h1>
+<p class="text-xs font-medium text-primary dark:text-primary-light font-display">Foundation Batch</p>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main-light dark:text-text-main-dark">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</header>
+<div class="px-4 py-2 sticky top-[60px] z-10 bg-background-light dark:bg-background-dark">
+<div class="flex h-12 w-full items-center rounded-xl bg-gray-200 dark:bg-gray-800 p-1">
+<label class="group relative flex flex-1 cursor-pointer h-full items-center justify-center overflow-hidden rounded-[10px] px-2 transition-all">
+<input class="peer invisible w-0 absolute" name="tab-view" type="radio" value="Subjects"/>
+<span class="absolute inset-0 bg-transparent peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:shadow-sm rounded-[10px] transition-all duration-200"></span>
+<span class="relative z-10 text-sm font-display font-semibold text-text-sub-light dark:text-text-sub-dark peer-checked:text-primary dark:peer-checked:text-primary-light truncate transition-colors">Subjects</span>
+</label>
+<label class="group relative flex flex-1 cursor-pointer h-full items-center justify-center overflow-hidden rounded-[10px] px-2 transition-all">
+<input class="peer invisible w-0 absolute" name="tab-view" type="radio" value="Tests"/>
+<span class="absolute inset-0 bg-transparent peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:shadow-sm rounded-[10px] transition-all duration-200"></span>
+<span class="relative z-10 text-sm font-display font-semibold text-text-sub-light dark:text-text-sub-dark peer-checked:text-primary dark:peer-checked:text-primary-light truncate transition-colors">Tests</span>
+</label>
+<label class="group relative flex flex-1 cursor-pointer h-full items-center justify-center overflow-hidden rounded-[10px] px-2 transition-all">
+<input checked="" class="peer invisible w-0 absolute" name="tab-view" type="radio" value="Updates"/>
+<span class="absolute inset-0 bg-transparent peer-checked:bg-white dark:peer-checked:bg-surface-dark peer-checked:shadow-sm rounded-[10px] transition-all duration-200"></span>
+<span class="relative z-10 text-sm font-display font-semibold text-text-sub-light dark:text-text-sub-dark peer-checked:text-primary dark:peer-checked:text-primary-light truncate transition-colors">Updates</span>
+</label>
+</div>
+</div>
+<main class="flex-1 flex flex-col gap-5 px-4 py-4 pb-28">
+<div class="relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark p-0 shadow-soft border border-secondary/20 dark:border-secondary/30">
+<div class="absolute top-0 right-0 p-2 opacity-10">
+<span class="material-symbols-outlined text-[100px] text-secondary">campaign</span>
+</div>
+<div class="bg-gradient-to-r from-secondary/10 to-transparent p-2 px-4 flex items-center gap-2 border-b border-secondary/10">
+<span class="material-symbols-outlined text-sm text-secondary fill-1">push_pin</span>
+<span class="text-xs font-bold text-secondary uppercase tracking-wider font-display">Pinned Update</span>
+</div>
+<div class="p-4 pt-3 relative z-10">
+<h3 class="text-lg font-display font-bold text-text-main-light dark:text-text-main-dark leading-tight mb-2">Live Class Rescheduled</h3>
+<p class="text-sm text-text-sub-light dark:text-text-sub-dark mb-3 leading-relaxed">
+                    The 'Advanced Geometry' session scheduled for today at 4:00 PM has been moved to 6:00 PM due to technical maintenance.
+                </p>
+<div class="flex items-center gap-2 text-xs font-medium text-text-sub-light/70 dark:text-text-sub-dark/70">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Today, 10:30 AM</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 relative pl-2">
+<div class="absolute left-[27px] top-4 bottom-4 w-0.5 bg-gray-200 dark:bg-gray-800 rounded-full z-0"></div>
+<div class="relative z-10 flex gap-4 items-start">
+<div class="flex-shrink-0 size-14 rounded-full bg-blue-50 dark:bg-blue-900/20 border-4 border-background-light dark:border-background-dark flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="flex-1 bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-card">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded">Study Material</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark font-medium">2h ago</span>
+</div>
+<h4 class="text-base font-display font-semibold text-text-main-light dark:text-text-main-dark mb-1">Economy Budget 2025 PDF</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mb-3">Detailed analysis notes for the Union Budget have been uploaded to the Economics folder.</p>
+<button class="flex items-center gap-1.5 text-xs font-semibold text-primary dark:text-primary-light hover:underline">
+<span>Download PDF</span>
+<span class="material-symbols-outlined text-[14px]">download</span>
+</button>
+</div>
+</div>
+<div class="relative z-10 flex gap-4 items-start">
+<div class="flex-shrink-0 size-14 rounded-full bg-green-50 dark:bg-green-900/20 border-4 border-background-light dark:border-background-dark flex items-center justify-center text-green-600 dark:text-green-400 shadow-sm">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<div class="flex-1 bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-card">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Test Series</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark font-medium">5h ago</span>
+</div>
+<h4 class="text-base font-display font-semibold text-text-main-light dark:text-text-main-dark mb-1">Weekly Mock Test 12 Live</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mb-3">The mock test is now live. Please attempt it before Sunday midnight to get your rank.</p>
+<button class="w-full py-2 bg-primary/5 hover:bg-primary/10 dark:bg-white/5 dark:hover:bg-white/10 rounded-lg text-xs font-bold text-primary dark:text-primary-light transition-colors">
+                        Start Test
+                    </button>
+</div>
+</div>
+<div class="relative z-10 flex gap-4 items-start">
+<div class="flex-shrink-0 size-14 rounded-full bg-orange-50 dark:bg-orange-900/20 border-4 border-background-light dark:border-background-dark flex items-center justify-center text-orange-600 dark:text-orange-400 shadow-sm">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div class="flex-1 bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-card">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 px-2 py-0.5 rounded">Alert</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark font-medium">Yesterday</span>
+</div>
+<h4 class="text-base font-display font-semibold text-text-main-light dark:text-text-main-dark mb-1">Doubt Clearing Session</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark">Don't forget to join the doubt clearing session for Reasoning tomorrow at 10 AM.</p>
+</div>
+</div>
+<div class="relative z-10 flex gap-4 items-start">
+<div class="flex-shrink-0 size-14 rounded-full bg-purple-50 dark:bg-purple-900/20 border-4 border-background-light dark:border-background-dark flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-sm">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<div class="flex-1 bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-card opacity-80">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-2 py-0.5 rounded">Video</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark font-medium">2 days ago</span>
+</div>
+<h4 class="text-base font-display font-semibold text-text-main-light dark:text-text-main-dark mb-1">New English Lecture</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark">Lecture 5: Subject Verb Agreement Part 2 has been added to the course.</p>
+</div>
+</div>
+<div class="relative z-10 flex justify-center mt-2">
+<p class="text-[10px] text-text-sub-light/50 dark:text-text-sub-dark/50 font-medium">You're all caught up!</p>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 z-30 flex h-[80px] w-full max-w-md items-center justify-around border-t border-gray-100 dark:border-gray-800 bg-surface-light dark:bg-surface-dark pb-3 shadow-[0_-5px_20px_rgba(0,0,0,0.03)]">
+<button class="group flex flex-col items-center gap-1 p-2 text-primary dark:text-primary-light">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">school</span>
+<span class="text-[10px] font-medium font-display">Batch</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary-light transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">quiz</span>
+<span class="text-[10px] font-medium font-display">Tests</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary-light transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">forum</span>
+<span class="text-[10px] font-medium font-display">Doubts</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary-light transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-0.5 transition-transform">person</span>
+<span class="text-[10px] font-medium font-display">Profile</span>
+</button>
+</nav>
+</div>
+
+</body></html>

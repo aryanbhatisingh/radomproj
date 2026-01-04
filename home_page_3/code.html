@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EdTech App Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f4c75", // Deep Teal/Navy Blue
+                        "primary-dark": "#0a3655",
+                        "secondary": "#ff6f00", // Bright Orange
+                        "secondary-hover": "#e65100",
+                        "background-light": "#f8f9fa", // Soft Off-White
+                        "background-dark": "#171720",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#232333",
+                        "teal-accent": "#00bfa5",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "body": ["Open Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "soft": "0 8px 30px -4px rgba(15, 76, 117, 0.08)",
+                        "card": "0 2px 12px -2px rgba(0, 0, 0, 0.05)",
+                        "neumorph": "8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 pb-24 transition-colors duration-300">
+<header class="sticky top-0 z-40 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-md px-5 py-4 flex items-center justify-between shadow-sm border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200">menu</span>
+</button>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-soft shadow-primary/30">
+        E
+    </div>
+<h1 class="text-xl font-bold tracking-tight text-primary dark:text-white">EdTech</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="relative flex items-center justify-center p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200">search</span>
+</button>
+<button class="relative flex items-center justify-center p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200">notifications</span>
+<span class="absolute top-2.5 right-3 w-2 h-2 bg-secondary rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-8 pt-6">
+<section class="flex overflow-x-auto snap-x snap-mandatory px-5 gap-4 no-scrollbar pb-4">
+<div class="snap-center shrink-0 w-[88vw] md:w-[60vw] lg:w-[40vw] flex flex-col rounded-2xl overflow-hidden shadow-soft bg-surface-light dark:bg-surface-dark group relative">
+<div class="relative w-full aspect-[16/9] bg-slate-200 dark:bg-slate-800 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Abstract purple and blue geometric pattern representing education" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDArFkEaxbpQG3gHBJd14mxLnM_9S7UGXJW8c4WjlsxJHOBFg_sBSkiyAGmJhnDP-vNpFO3LgwGIxzn8Z8MgKq-Lr0my1-1UzdEkjMrlmuTVHQw2K1CA_aRfjG2c6Gwz-jWJ61bmert4O_D_OTY2_08mYvmInEt-kCIazUw2j_KMeR-omtkgSV1q-Wg64rq08v4ORw_lrignDeX5HiJt1c5v5z7hX_iryhwCRQmEFCEw0Hqr3ickG7kBniLQQdV4tV9cHQg2EAi4SY");'>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent mix-blend-multiply opacity-90"></div>
+<div class="absolute inset-x-0 bottom-0 p-5 z-10 flex flex-col justify-end h-full">
+<div class="flex items-start justify-between mb-2">
+<span class="bg-secondary text-white px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider shadow-sm">New Batch</span>
+</div>
+<h3 class="text-2xl font-bold text-white leading-tight drop-shadow-md mb-1">UPSC 2024 Ultimate Batch</h3>
+<p class="text-sm text-slate-100 font-medium opacity-90 mb-3">Enroll now and get 50% Off</p>
+<button class="bg-white text-primary text-xs font-bold py-2 px-4 rounded-lg w-fit shadow-sm hover:bg-gray-50 transition-colors">Join Now</button>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[88vw] md:w-[60vw] lg:w-[40vw] flex flex-col rounded-2xl overflow-hidden shadow-soft bg-surface-light dark:bg-surface-dark group relative">
+<div class="relative w-full aspect-[16/9] bg-slate-200 dark:bg-slate-800 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Student studying on a laptop in a library environment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxNvoHCtCzOIx5J_OsAnNWLK7QToduJkwrlEl347jBQ0RD5_5H5-Amy-HvZHJX4kJUumVgKmOIkCmcK3LIM-u06HvA8f81SH_55BFhNnd1B1txUNiEJYKqXtf1uJLsZg77IBoaeEB2S7it4iYb9Cvs_JTwF73s0btRIS6KTei8ZZpetPdi_OF8p0FYZSQNjOcUq46vLZMkh3r-4-IBKX5gK4mVTOZqxkZ9PkcaT9-vIAsdTWAVU8qac_9TazPXlgQOpnlE2Wl8ns8");'>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+<div class="absolute inset-x-0 bottom-0 p-5 z-10 flex flex-col justify-end h-full">
+<div class="flex items-start justify-between mb-2">
+<span class="bg-teal-500 text-white px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider shadow-sm">Trending</span>
+</div>
+<h3 class="text-2xl font-bold text-white leading-tight drop-shadow-md mb-1">Mastering Mathematics</h3>
+<p class="text-sm text-slate-100 font-medium opacity-90 mb-3">Live classes starting soon</p>
+<button class="bg-secondary text-white text-xs font-bold py-2 px-4 rounded-lg w-fit shadow-sm hover:bg-secondary-hover transition-colors">Explore</button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-5">
+<div class="grid grid-cols-4 gap-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-white dark:bg-surface-dark shadow-card flex items-center justify-center text-primary group-hover:-translate-y-1 transition-transform duration-300 border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-3xl text-primary">picture_as_pdf</span>
+</div>
+<span class="text-[11px] font-semibold text-center text-slate-600 dark:text-slate-300 leading-tight">Free PDFs</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-white dark:bg-surface-dark shadow-card flex items-center justify-center text-primary group-hover:-translate-y-1 transition-transform duration-300 border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-3xl text-primary">public</span>
+</div>
+<span class="text-[11px] font-semibold text-center text-slate-600 dark:text-slate-300 leading-tight">Current Affairs</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-white dark:bg-surface-dark shadow-card flex items-center justify-center text-primary group-hover:-translate-y-1 transition-transform duration-300 border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-3xl text-primary">menu_book</span>
+</div>
+<span class="text-[11px] font-semibold text-center text-slate-600 dark:text-slate-300 leading-tight">Books</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-white dark:bg-surface-dark shadow-card flex items-center justify-center text-primary group-hover:-translate-y-1 transition-transform duration-300 border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-3xl text-primary">history_edu</span>
+</div>
+<span class="text-[11px] font-semibold text-center text-slate-600 dark:text-slate-300 leading-tight">Prev. Papers</span>
+</button>
+</div>
+</section>
+<section class="px-5">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-slate-800 dark:text-white">Continue Learning</h3>
+<button class="text-secondary text-sm font-semibold hover:text-secondary-hover transition-colors">View All</button>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3.5 rounded-2xl shadow-card border border-slate-100 dark:border-slate-800 flex items-start gap-4">
+<div class="w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
+<div class="w-full h-full bg-cover bg-center" data-alt="Lecture thumbnail showing a stack of political science books" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJ000CmghDdAOvAgXWWluk9shYK0amthhcMBVXxWt3dxZmslGcMTJf3StYtmdPavdjX98-9bK7qgLcGaGRaYzt4S2r0UqzGdWFbwr4CW3YwGeqmTZvXd4rRxxPDvYMMWaSIt5HsWKnCOa_ulImzCew0ObDCiSaqTcog4jD0yRW_RLC3Ue51fGrQ09PgKxT2h4EITAoWID6tWjh_lKh75VG20DZ9-C-_lyuY4cUowYh7PzcxwwX3iOS1YdKHR58u_xYQEp-thcyJWg");'></div>
+</div>
+<div class="flex flex-col justify-between flex-1 w-full min-w-0 h-full py-0.5">
+<h4 class="text-sm font-bold text-slate-800 dark:text-white leading-snug line-clamp-2 mb-3">Indian Polity: Lecture 4 - Fundamental Rights</h4>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
+<div class="h-full bg-teal-500 rounded-full w-[40%]"></div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">Lecture 4 of 12</span>
+<span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500">40% completed</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pb-6">
+<div class="px-5 flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<h3 class="text-lg font-bold text-slate-800 dark:text-white">Live Now</h3>
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+</span>
+</div>
+<button class="text-secondary text-sm font-semibold hover:text-secondary-hover transition-colors">See All</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-5 pb-4 no-scrollbar">
+<div class="min-w-[220px] w-[220px] flex flex-col gap-3 group cursor-pointer bg-white dark:bg-surface-dark p-2.5 rounded-xl shadow-card border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-video rounded-lg overflow-hidden bg-slate-800">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="News broadcasting studio background for current affairs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6_YzXTqelRi9oE9hs8M-VBI8Ak_PiOqEGK5E8ym1TJ_PF5zPyBVtMdil8eriYGqIlj9NcHrwCSVY46GcGpu8XsxnJ1-6QD-Rahy_us2--FbLeuQ1kE6mGVqVln1GJBORx_mWwYUh2fx9K3DdNqrKb-vCBM7wPyfiUubrVmTPDKDNJX14IBgqya8l5HYIqVrHm8Idye3TcA-u33kxEyPFa_e_OxUTSzndvfT-B6XpHl3JL1J1_STlqXfxzZcurGkmvOcbgazJto3M");'></div>
+<div class="absolute top-2 left-2 bg-red-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> LIVE
+                        </div>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-md text-white text-[9px] font-medium px-2 py-0.5 rounded-full border border-white/10">
+                            1.2k watching
+                        </div>
+</div>
+<div class="px-1 pb-1">
+<h4 class="font-bold text-sm text-slate-800 dark:text-white leading-snug line-clamp-2 group-hover:text-primary transition-colors">Daily News Analysis (DNA) - 24 Oct</h4>
+<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-medium">Current Affairs • Hindi</p>
+</div>
+</div>
+<div class="min-w-[220px] w-[220px] flex flex-col gap-3 group cursor-pointer bg-white dark:bg-surface-dark p-2.5 rounded-xl shadow-card border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-video rounded-lg overflow-hidden bg-slate-800">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Blackboard with complex mathematical formulas" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCP9TL1zo09WpNvYP4vZasJVR97CKXFm1MT-ChJLiop7KAbZ9kMJLYaPpaSrhMF9N1bOGwbaUb4DREeo1NzInVpry8TRoH28L_5ACO2UWIToqxA7izkOaBE2Y6q_84kJDdd1tcufYOi2H2umtkQUJhDL8RRKHlJ1I938aoWYwgjl-xEPRrB_Re7Hy9ZJIm3I3YZXTt-EGIm7oDzi3KltKqesTHxuEwzwD89zLID6rLe4dVJqDV3oZwAigfFOS0riK6KDaAU4-O8Ios");'></div>
+<div class="absolute top-2 left-2 bg-red-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> LIVE
+                        </div>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-md text-white text-[9px] font-medium px-2 py-0.5 rounded-full border border-white/10">
+                            856 watching
+                        </div>
+</div>
+<div class="px-1 pb-1">
+<h4 class="font-bold text-sm text-slate-800 dark:text-white leading-snug line-clamp-2 group-hover:text-primary transition-colors">CSAT Math Tricks &amp; Shortcuts</h4>
+<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-medium">Aptitude • English</p>
+</div>
+</div>
+<div class="min-w-[220px] w-[220px] flex flex-col gap-3 group cursor-pointer bg-white dark:bg-surface-dark p-2.5 rounded-xl shadow-card border border-slate-100 dark:border-slate-800">
+<div class="relative aspect-video rounded-lg overflow-hidden bg-slate-800">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Science laboratory background with test tubes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBG7-cm7p57Ky1mNOD7y9oPcE2XtD8ulgZakVLotym52dx1R6LRVLP4JPQiTfD1rdRC1EnsCLEZLsWmEP6utlXQBC1fJrP1dhv4cwPD8YjocFeN8eC92N-sL_uWzLgC8oAmaJNbwZfr6iFA3DK5xmUkeUVmUZTpN5GiAEpwY5ux-UV0gGXAexDvwjZYZR6il4ip3rDjqPkARyWnKr_gACBiunjNyQ4PG-RcP_S6cR6GSoei6NxQwnh03I0BsbXY08k0grNEIHH0GtQ");'></div>
+<div class="absolute top-2 left-2 bg-red-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> LIVE
+                        </div>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-md text-white text-[9px] font-medium px-2 py-0.5 rounded-full border border-white/10">
+                            432 watching
+                        </div>
+</div>
+<div class="px-1 pb-1">
+<h4 class="font-bold text-sm text-slate-800 dark:text-white leading-snug line-clamp-2 group-hover:text-primary transition-colors">General Science Marathon</h4>
+<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-medium">Science • Hinglish</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 flex justify-around items-center h-[4.5rem] px-2 pb-1 z-50 shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center gap-1 w-full h-full justify-center group">
+<span class="material-symbols-outlined icon-filled text-primary text-[28px] transition-colors drop-shadow-sm">home</span>
+<span class="text-[10px] font-bold text-primary">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-full h-full justify-center group hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors text-[24px]">school</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-500 group-hover:text-primary transition-colors">Batches</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-full h-full justify-center group hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors text-[24px]">quiz</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-500 group-hover:text-primary transition-colors">Tests</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-full h-full justify-center group hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors text-[24px]">description</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-500 group-hover:text-primary transition-colors">Notes</span>
+</button>
+</nav>
+</body></html>

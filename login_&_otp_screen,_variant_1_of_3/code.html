@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EdTech Login &amp; OTP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1466b8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'glow': '0 4px 20px -2px rgba(20, 102, 184, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-4">
+<!-- Mobile Screen Container -->
+<div class="relative w-full max-w-[420px] bg-white dark:bg-[#161e29] rounded-2xl shadow-soft overflow-hidden flex flex-col transition-colors duration-300">
+<!-- Top Bar -->
+<div class="flex items-center justify-between px-5 pt-6 pb-2 z-10">
+<button class="flex items-center justify-center w-10 h-10 -ml-2 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition-colors text-slate-800 dark:text-white group">
+<span class="material-symbols-outlined group-hover:-translate-x-0.5 transition-transform" data-icon="ArrowLeft" data-size="24px">arrow_back</span>
+</button>
+<div class="text-sm font-bold text-slate-800 dark:text-white tracking-wide opacity-0">LOGIN</div> <!-- Invisible spacer for balance if needed, or title -->
+<button class="text-sm font-semibold text-primary hover:text-blue-600 transition-colors">Help</button>
+</div>
+<!-- Header Image Area -->
+<div class="px-5 pb-4">
+<div class="w-full h-40 rounded-xl bg-cover bg-center relative overflow-hidden shadow-sm group" data-alt="Group of diverse students studying together outdoors on grass" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfRB_hE9hpZL-fV5M5NWfNFXjpppjS1bLh9K-_ukm8ogHc9K7c11OI5TPsZ9mRKRYVsyyOLY4jg9X36lMpNc45qqIk61cTCgeg1XHHo55gTQg0tv4w9SbPko4bCCaASK2qGOWHNYsrb4oQ0qL02YMd0TIZ34_esSHK8NB3qhyuQPiBJnOEvAn6UKP19GY7ItEWTh1ez6r7kFkeVcvlSl-eSEZFRa6PxCGWFqqjl97-_GeDq7ejSCgLNfOdgZHavF4iAFxqxWZc9Wg');">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 mb-2">
+<span class="material-symbols-outlined text-white text-[14px]">school</span>
+<span class="text-xs font-medium text-white">Exam Prep</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight">Crack your exams today</h2>
+</div>
+</div>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-5 pb-8 scrollbar-hide">
+<!-- Headline -->
+<div class="mb-8 mt-2">
+<h1 class="text-slate-900 dark:text-white text-[28px] font-bold leading-tight mb-2">Welcome Back!</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-relaxed">Enter your mobile number to start learning with the best educators.</p>
+</div>
+<!-- Input Group: Phone -->
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2.5 ml-1">Mobile Number</label>
+<div class="flex gap-3 group focus-within:ring-0">
+<!-- Country Code -->
+<div class="w-[88px] flex-shrink-0 relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none z-10">
+<span class="text-lg">🇮🇳</span>
+</div>
+<select class="w-full h-14 pl-10 pr-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white font-medium text-base focus:ring-2 focus:ring-primary focus:border-transparent outline-none appearance-none transition-all cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700">
+<option>+91</option>
+<option>+1</option>
+<option>+44</option>
+</select>
+<div class="absolute inset-y-0 right-2 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Phone Input -->
+<div class="flex-1 relative">
+<input class="w-full h-14 px-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white font-medium text-lg placeholder:text-slate-400 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all shadow-sm group-hover:bg-slate-100 dark:group-hover:bg-slate-700 focus:!bg-white dark:focus:!bg-slate-800" placeholder="98765 43210" type="tel" value=""/>
+<div class="absolute inset-y-0 right-4 flex items-center text-green-500 opacity-0 has-[:valid]:opacity-100">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-14 bg-primary hover:bg-blue-700 text-white text-base font-bold rounded-xl shadow-glow transition-all transform active:scale-[0.98] flex items-center justify-center gap-2">
+<span>Get OTP</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Divider -->
+<div class="relative py-2">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-white dark:bg-[#161e29] px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">Or continue with</span>
+</div>
+</div>
+<!-- Social Login -->
+<div class="flex gap-4 justify-center">
+<button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-slate-700 dark:text-white font-medium text-sm group">
+<img alt="Google G Logo" class="w-5 h-5" data-alt="Google Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIyYoL6dj-YVnfS9PcTZs-V-W_zMkS7Ir5UNMpt2tK7_HqbQsOfrv6IS_yhxrT-kUlCJ1vc2owkbxJLXZ5xllvaD_YeNUBNclE3j3jwvEu7ZA8c8gDCtf1g5TyRt725gyNYqNSvALtUo5NLzcsRUR5adz9GUaa1-3NLXNPEhp1vW190TeblS7l4WwAeiQLrQdeKYugACzqZZKrDdYu3kUgoy6mbEthSXEupvw26f6Vmnc6ymkvZGXILknuUPsYpSrCaeowoTT_zxc"/>
+<span class="group-hover:text-slate-900 dark:group-hover:text-white">Google</span>
+</button>
+<button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-slate-700 dark:text-white font-medium text-sm group">
+<span class="material-symbols-outlined text-[22px]">ios</span>
+<span class="group-hover:text-slate-900 dark:group-hover:text-white">Apple</span>
+</button>
+</div>
+<!-- OTP Section Demo (Visually separated for demonstration of Step 2) -->
+<div class="mt-8 pt-8 border-t border-dashed border-slate-200 dark:border-slate-700 opacity-60 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-end mb-4">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Enter Verification Code</label>
+<span class="text-xs text-primary font-medium cursor-pointer hover:underline">Resend in 00:30</span>
+</div>
+<div class="flex justify-between gap-3 mb-4">
+<input class="w-full h-14 text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all caret-primary" maxlength="1" placeholder="-" type="text"/>
+<input class="w-full h-14 text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all caret-primary" maxlength="1" placeholder="-" type="text"/>
+<input class="w-full h-14 text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all caret-primary" maxlength="1" placeholder="-" type="text"/>
+<input class="w-full h-14 text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all caret-primary" maxlength="1" placeholder="-" type="text"/>
+</div>
+<button class="w-full h-14 bg-slate-900 dark:bg-white dark:text-slate-900 hover:bg-slate-800 text-white text-base font-bold rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                        Verify &amp; Login
+                    </button>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-4 text-center">
+<p class="text-xs text-slate-400 leading-relaxed px-8">
+                    By logging in, you agree to our <br/>
+<a class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary transition-colors" href="#">Terms of Service</a> &amp; <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</p>
+</div>
+</div>
+</div>
+</body></html>

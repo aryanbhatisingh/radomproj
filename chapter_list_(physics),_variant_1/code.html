@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chapter List - Physics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700d1",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#231b2e",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(87, 0, 209, 0.05)',
+                        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit to hide it for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header Section -->
+<div class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-200">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<button aria-label="Go back" class="text-gray-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h2 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-12">Physics</h2>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary/70 dark:text-primary/90 text-xl group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full rounded-lg border-none bg-white dark:bg-surface-dark py-3 pl-10 pr-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm transition-all duration-200" placeholder="Search Chapters..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-4 py-4 space-y-4 pb-24">
+<!-- List Item 1 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-4 flex items-center justify-between gap-4 shadow-soft hover:shadow-lg transition-shadow duration-300 cursor-pointer group border border-transparent dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center shrink-0 size-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                        01
+                    </div>
+<div class="flex flex-col justify-center">
+<h3 class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Kinematics</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">8 Videos</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">3 PDFs</span>
+</div>
+</div>
+</div>
+<!-- Circular Progress 75% -->
+<div class="relative size-12 flex items-center justify-center shrink-0">
+<svg class="size-full -rotate-90 transform" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<!-- Progress Circle -->
+<path class="text-primary drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-primary dark:text-primary-light">75%</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-4 flex items-center justify-between gap-4 shadow-soft hover:shadow-lg transition-shadow duration-300 cursor-pointer group border border-transparent dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center shrink-0 size-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                        02
+                    </div>
+<div class="flex flex-col justify-center">
+<h3 class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Laws of Motion</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">12 Videos</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">5 PDFs</span>
+</div>
+</div>
+</div>
+<!-- Circular Progress 30% -->
+<div class="relative size-12 flex items-center justify-center shrink-0">
+<svg class="size-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="30, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-gray-900 dark:text-white">30%</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-4 flex items-center justify-between gap-4 shadow-soft hover:shadow-lg transition-shadow duration-300 cursor-pointer group border border-transparent dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center shrink-0 size-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                        03
+                    </div>
+<div class="flex flex-col justify-center">
+<h3 class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Work, Energy &amp; Power</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">6 Videos</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">2 PDFs</span>
+</div>
+</div>
+</div>
+<!-- Circular Progress 0% -->
+<div class="relative size-12 flex items-center justify-center shrink-0">
+<svg class="size-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-gray-400 dark:text-gray-600">0%</span>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-4 flex items-center justify-between gap-4 shadow-soft hover:shadow-lg transition-shadow duration-300 cursor-pointer group border border-transparent dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center shrink-0 size-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                        04
+                    </div>
+<div class="flex flex-col justify-center">
+<h3 class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Rotational Motion</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">14 Videos</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">6 PDFs</span>
+</div>
+</div>
+</div>
+<!-- Circular Progress 10% -->
+<div class="relative size-12 flex items-center justify-center shrink-0">
+<svg class="size-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="10, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-gray-900 dark:text-white">10%</span>
+</div>
+</div>
+<!-- List Item 5 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-4 flex items-center justify-between gap-4 shadow-soft hover:shadow-lg transition-shadow duration-300 cursor-pointer group border border-transparent dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center shrink-0 size-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                        05
+                    </div>
+<div class="flex flex-col justify-center">
+<h3 class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Gravitation</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">5 Videos</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">1 PDF</span>
+</div>
+</div>
+</div>
+<!-- Circular Progress 0% -->
+<div class="relative size-12 flex items-center justify-center shrink-0">
+<svg class="size-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-gray-400 dark:text-gray-600">0%</span>
+</div>
+</div>
+<!-- List Item 6 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-4 flex items-center justify-between gap-4 shadow-soft hover:shadow-lg transition-shadow duration-300 cursor-pointer group border border-transparent dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center shrink-0 size-12 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                        06
+                    </div>
+<div class="flex flex-col justify-center">
+<h3 class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Thermodynamics</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">9 Videos</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">4 PDFs</span>
+</div>
+</div>
+</div>
+<!-- Circular Progress 0% -->
+<div class="relative size-12 flex items-center justify-center shrink-0">
+<svg class="size-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-gray-400 dark:text-gray-600">0%</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

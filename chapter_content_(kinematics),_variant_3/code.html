@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chapter Content - Kinematics</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5805cc",
+                        "primary-light": "#7e3ff2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a2236",
+                        "text-primary-light": "#130d1c",
+                        "text-primary-dark": "#f0eef5",
+                        "text-secondary-light": "#6b479e",
+                        "text-secondary-dark": "#bcaacd",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl overflow-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-200">
+<!-- Breadcrumbs -->
+<div class="px-4 pt-3 pb-1">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium leading-normal flex items-center gap-1">
+<span class="opacity-70">Home</span>
+<span class="material-symbols-outlined text-[10px] opacity-50">chevron_right</span>
+<span class="opacity-70">Physics</span>
+<span class="material-symbols-outlined text-[10px] opacity-50">chevron_right</span>
+<span class="text-primary dark:text-primary-light font-semibold">Kinematics</span>
+</p>
+</div>
+<!-- Title Row -->
+<div class="flex items-center justify-between px-4 pb-3 pt-1">
+<div class="flex items-center gap-3">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:scale-95 transition-all text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold leading-tight tracking-tight">Kinematics</h1>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:scale-95 transition-all text-primary dark:text-primary-light">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="px-4">
+<div class="flex w-full items-center justify-between relative">
+<!-- Active Tab Indicator Simulation (Bottom Border) -->
+<button class="group flex flex-1 flex-col items-center justify-center pb-3 pt-2 relative">
+<span class="text-primary dark:text-primary-light text-sm font-bold tracking-wide">Videos</span>
+<div class="absolute bottom-0 h-[3px] w-full rounded-t-full bg-primary dark:bg-primary-light transition-all"></div>
+</button>
+<button class="group flex flex-1 flex-col items-center justify-center pb-3 pt-2 relative">
+<span class="text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-light text-sm font-medium tracking-wide transition-colors">Notes</span>
+<div class="absolute bottom-0 h-[3px] w-0 rounded-t-full bg-primary dark:bg-primary-light transition-all group-hover:w-1/2 opacity-0 group-hover:opacity-50"></div>
+</button>
+<button class="group flex flex-1 flex-col items-center justify-center pb-3 pt-2 relative">
+<span class="text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-light text-sm font-medium tracking-wide transition-colors">Quizzes</span>
+<div class="absolute bottom-0 h-[3px] w-0 rounded-t-full bg-primary dark:bg-primary-light transition-all group-hover:w-1/2 opacity-0 group-hover:opacity-50"></div>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto pb-24 scrollbar-hide">
+<div class="flex flex-col gap-5 p-4">
+<!-- Section Label -->
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">Video Lectures</h3>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark bg-primary/10 dark:bg-primary-light/10 px-2 py-1 rounded-md">4 Videos</span>
+</div>
+<!-- Card 1: Watched -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] dark:shadow-none dark:border dark:border-white/5 active:scale-[0.99] transition-all">
+<!-- Thumbnail Container -->
+<div class="relative aspect-video w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract 3D rendering of motion and velocity lines in purple" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_07Qhv4RWRV7fRiVe9CLv8XNU8QOojD9uO8kVG_F5P3F-D26hciS-uAW86UrRYrt2F8ggJKVCsheVcPaNY_juaWHyDd-nOJR9O9TnUQ8vrWcuxbDhYw73BOroPnQN_hU6sXZ0qBgq105832oCQSDyaOMyNABuwp-ZIDbwFAr6BRWpvfDOb5d1epqJ2uRxCCSUlKKviMxPuzOIHRCsiPCkCP3hxiFHNS2irTNssMXBjIz83dTCyFciUX78atLGIjLuscYaXZ_B66c');"></div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="flex size-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+</div>
+</div>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 rounded bg-black/70 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
+                            12:05
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-2 p-4">
+<div class="flex items-start justify-between gap-2">
+<h3 class="text-base font-bold leading-tight text-text-primary-light dark:text-text-primary-dark line-clamp-2">
+                                Intro to 1D Motion
+                            </h3>
+<!-- Watched Indicator -->
+<div class="flex shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 p-1">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-sm font-bold">check</span>
+</div>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark line-clamp-1">Basics of displacement, velocity, and acceleration.</p>
+<!-- Progress Bar (Full) -->
+<div class="mt-1 h-1 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-700">
+<div class="h-full w-full bg-green-500 rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-medium text-green-600 dark:text-green-400 mt-0.5">
+<span>Completed</span>
+</div>
+</div>
+</div>
+<!-- Card 2: In Progress -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] dark:shadow-none dark:border dark:border-white/5 active:scale-[0.99] transition-all">
+<div class="relative aspect-video w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Science laboratory equipment focusing on measurement tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzZxqQ-UaG1Zpe4BFQuA1V6S0qdt_54DzYgM8ah9o5jJcMZRQzgkzJlKVJS6mvszHCuBvPI-MdajxUv6kyf6Nwor6ZZJZKZ6CLMwdtTrAEZWO9Siz0sVoBiEyWHywssOa4ZOUO68-a671_ry63Lnjkb433EGYUXzQvp9deMxNpEu8fXBohMSawJIKsi6RsAQo1eTT3H1crMYm5pEyL9WAaZ90FuA5S-XNVBozE_LsVXA8B8dzm_gORVpCjJBJwFBmqxYcjRwvnMWk');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 rounded bg-black/70 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
+                            15:30
+                        </div>
+</div>
+<div class="flex flex-col gap-2 p-4">
+<div class="flex items-start justify-between gap-2">
+<h3 class="text-base font-bold leading-tight text-text-primary-light dark:text-text-primary-dark line-clamp-2">
+                                Velocity vs Speed
+                            </h3>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark line-clamp-1">Understanding vector vs scalar quantities.</p>
+<!-- Progress Bar (50%) -->
+<div class="mt-1 h-1 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-700">
+<div class="h-full w-1/2 bg-primary dark:bg-primary-light rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-medium text-primary dark:text-primary-light mt-0.5">
+<span>50% Completed</span>
+<span>7:45 left</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Not Started -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] dark:shadow-none dark:border dark:border-white/5 active:scale-[0.99] transition-all">
+<div class="relative aspect-video w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract dark background with geometric mathematical shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAG2XCIazezfnmbAuC8B9rWUpSWLo5JzQFf_cVvrZTfEc9EfzU41kA7EvHFfx--kBiOmPO5ej4uiZog_m_bKDFFmg1QwVDDeakz_sgIeUvbD8onx4WxQq2D8Yc-xYjxfNojPJ3kLO6ff2paWy2SgqgTHnWJ-wKrGdLNLchwZfAd4CsD8RnclSO7IDYQgfMNEuao1vrwW8tbj4B9ryfcYIp9xrMdeB23qzXcfegNjTNtOYSSMNIx_LiubgsffVr2C8Z2spECjCaVV8s');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 rounded bg-black/70 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
+                            22:15
+                        </div>
+</div>
+<div class="flex flex-col gap-2 p-4">
+<div class="flex items-start justify-between gap-2">
+<h3 class="text-base font-bold leading-tight text-text-primary-light dark:text-text-primary-dark line-clamp-2">
+                                Acceleration &amp; Gravity
+                            </h3>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark line-clamp-1">Free fall concepts and gravitational acceleration.</p>
+<!-- Progress Bar (Empty) -->
+<div class="mt-1 h-1 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-700">
+<div class="h-full w-0 bg-primary dark:bg-primary-light rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-medium text-text-secondary-light dark:text-text-secondary-dark mt-0.5">
+<span>Not Started</span>
+</div>
+</div>
+</div>
+<!-- Notes Teaser (Simulating what is in the other tabs for context) -->
+<div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">Quick Notes Access</h3>
+<a class="text-xs font-bold text-primary dark:text-primary-light hover:underline" href="#">View All</a>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-3 shadow-sm border border-gray-100 dark:border-white/5 flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark truncate">Kinematics Formula Sheet</h4>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">2.4 MB • PDF</p>
+</div>
+<button class="size-8 flex items-center justify-center rounded-full text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-primary hover:bg-primary-light text-white px-5 py-3 shadow-[0_4px_14px_rgba(88,5,204,0.4)] hover:shadow-[0_6px_20px_rgba(88,5,204,0.6)] active:scale-95 transition-all duration-300 group">
+<span class="material-symbols-outlined text-xl">help</span>
+<span class="font-bold text-sm tracking-wide">Ask a Doubt</span>
+</button>
+</div>
+</body></html>

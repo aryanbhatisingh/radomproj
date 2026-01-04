@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Test Series Detail Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d", 
+                        "primary-dark": "#d6b400",
+                        "background-light": "#fcfbf8",
+                        "background-dark": "#18181b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'card': '0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }.no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 font-display antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<div class="sticky top-0 z-30 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 border-b border-gray-100 dark:border-gray-800 transition-colors">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-[#1c190d] dark:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-base font-bold leading-tight tracking-tight flex-1 text-center px-2 truncate text-[#1c190d] dark:text-white">Test Series Details</h2>
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-[#1c190d] dark:text-white transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<div class="px-5 pt-6 pb-2">
+<h1 class="text-[26px] font-bold leading-tight text-[#1c190d] dark:text-white mb-6 tracking-tight">SSC CGL Tier 1 - Full Mock Series 2024</h1>
+<div class="flex flex-row gap-3 mb-5">
+<div class="flex flex-1 flex-col gap-1 rounded-2xl border border-[#e8e4ce] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm items-start">
+<p class="text-[#1c190d] dark:text-white tracking-tight text-2xl font-bold leading-none">150</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mt-1">Total Tests</p>
+</div>
+<div class="flex flex-1 flex-col gap-1 rounded-2xl border border-[#e8e4ce] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm items-start">
+<p class="text-[#1c190d] dark:text-white tracking-tight text-2xl font-bold leading-none">25</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mt-1">Free Tests</p>
+</div>
+</div>
+<div class="flex justify-start mb-4">
+<a class="inline-flex items-center gap-1 text-yellow-700 dark:text-primary text-sm font-semibold hover:underline decoration-2 underline-offset-4 group" href="#">
+                    View Schedule
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="px-5 border-b border-gray-100 dark:border-gray-800 bg-background-light dark:bg-background-dark mb-4">
+<div class="flex w-full">
+<button class="flex-1 pb-3 text-sm font-bold text-[#1c190d] dark:text-white border-b-2 border-primary">Tests</button>
+<button class="flex-1 pb-3 text-sm font-bold text-gray-400 dark:text-gray-500 border-b-2 border-transparent hover:text-gray-600 transition-colors">Updates</button>
+</div>
+</div>
+<div class="sticky top-[64px] z-20 bg-background-light dark:bg-background-dark px-4 pb-4 transition-colors">
+<div class="flex h-11 w-full items-center rounded-xl bg-[#f4f1e7] dark:bg-gray-800 p-1">
+<label class="group relative flex-1 cursor-pointer h-full flex items-center justify-center">
+<input checked="" class="peer sr-only" name="filter" type="radio" value="all"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-700 shadow-sm scale-95 opacity-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all duration-200"></div>
+<span class="relative z-10 text-xs font-bold text-gray-500 peer-checked:text-[#1c190d] dark:peer-checked:text-white transition-colors uppercase tracking-wide">All</span>
+</label>
+<label class="group relative flex-1 cursor-pointer h-full flex items-center justify-center">
+<input class="peer sr-only" name="filter" type="radio" value="live"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-700 shadow-sm scale-95 opacity-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all duration-200"></div>
+<span class="relative z-10 text-xs font-bold text-gray-500 peer-checked:text-[#1c190d] dark:peer-checked:text-white transition-colors uppercase tracking-wide flex items-center gap-1">
+                        Live <span class="size-1.5 rounded-full bg-red-500 animate-pulse"></span>
+</span>
+</label>
+<label class="group relative flex-1 cursor-pointer h-full flex items-center justify-center">
+<input class="peer sr-only" name="filter" type="radio" value="upcoming"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-700 shadow-sm scale-95 opacity-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all duration-200"></div>
+<span class="relative z-10 text-xs font-bold text-gray-500 peer-checked:text-[#1c190d] dark:peer-checked:text-white transition-colors uppercase tracking-wide">Upcoming</span>
+</label>
+<label class="group relative flex-1 cursor-pointer h-full flex items-center justify-center">
+<input class="peer sr-only" name="filter" type="radio" value="previous"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-700 shadow-sm scale-95 opacity-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all duration-200"></div>
+<span class="relative z-10 text-xs font-bold text-gray-500 peer-checked:text-[#1c190d] dark:peer-checked:text-white transition-colors uppercase tracking-wide">Previous</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-5 px-5">
+<div class="relative flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-soft overflow-hidden border border-gray-100 dark:border-gray-700">
+<div class="h-28 bg-[#ece8da] dark:bg-gray-700/50 relative w-full flex items-center justify-center">
+<div class="absolute top-4 left-4 bg-[#e53935] text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm flex items-center gap-1">
+             ENDS IN 4H 30M
+         </div>
+<span class="material-symbols-outlined text-6xl text-yellow-600/10 dark:text-yellow-500/10 rotate-12">history_edu</span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">Full Length Mock</span>
+<div class="flex items-center gap-1 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded border border-green-100 dark:border-green-900/30">
+<span class="material-symbols-outlined text-xs text-green-600 dark:text-green-400 filled-icon">lock_open</span>
+<span class="text-[10px] font-bold text-green-700 dark:text-green-400">Unlocked</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-[#1c190d] dark:text-white mb-3 leading-snug">Full Mock Test 04</h3>
+<div class="flex items-center gap-3 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-6">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">format_list_numbered</span>
+<span>100 Qs</span>
+</div>
+<span class="text-slate-300 dark:text-slate-600">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>60 Mins</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex flex-col gap-0.5">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Subject</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">General Awareness</span>
+</div>
+<button class="bg-primary hover:bg-primary-dark text-[#1c190d] px-6 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:shadow-md transition-all active:scale-95">
+                  Start Test
+             </button>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-5 shadow-soft border border-gray-100 dark:border-gray-700">
+<div class="flex justify-between items-start mb-3">
+<div class="flex flex-col gap-2">
+<span class="w-fit inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">ATTEMPTED</span>
+<h3 class="text-lg font-bold text-[#1c190d] dark:text-white">Full Mock Test 01</h3>
+</div>
+<div class="relative flex items-center justify-center size-12">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="71, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-xs font-bold text-[#1c190d] dark:text-white">142</span>
+<span class="text-[8px] text-gray-400 font-bold">/200</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-gray-400">schedule</span>
+<span>60 Mins</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-gray-400">check_circle</span>
+<span>100 Ques</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+<button class="flex items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-300 transition-colors">
+                        Solutions
+                    </button>
+<button class="flex items-center justify-center gap-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black px-4 py-2.5 text-sm font-bold transition-colors shadow-sm">
+                        Analysis
+                        <span class="material-symbols-outlined text-lg">analytics</span>
+</button>
+</div>
+</div>
+<div class="relative flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-5 shadow-soft border border-gray-100 dark:border-gray-700 opacity-90">
+<div class="flex justify-between items-start mb-3">
+<div class="flex flex-col gap-2">
+<span class="w-fit inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider bg-yellow-50 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-100 dark:border-yellow-900/30">PREMIUM</span>
+<h3 class="text-lg font-bold text-[#1c190d] dark:text-white">Full Mock Test 05</h3>
+</div>
+<div class="size-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-400 text-lg">lock</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-gray-400">schedule</span>
+<span>60 Mins</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-gray-400">emoji_events</span>
+<span>200 Marks</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+<span class="text-xs font-medium text-slate-400">Unlock to attempt</span>
+<button class="flex items-center justify-center gap-2 rounded-xl border border-primary text-[#1c190d] dark:text-primary hover:bg-primary/10 px-6 py-2.5 text-sm font-bold transition-colors">
+                        Unlock
+                        <span class="material-symbols-outlined text-lg filled-icon">lock_open</span>
+</button>
+</div>
+</div>
+<div class="relative flex flex-col rounded-2xl bg-white dark:bg-gray-800 p-5 shadow-soft border border-gray-100 dark:border-gray-700">
+<div class="flex justify-between items-start mb-3">
+<div class="flex flex-col gap-2">
+<span class="w-fit inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30">UPCOMING</span>
+<h3 class="text-lg font-bold text-[#1c190d] dark:text-white">Full Mock Test 06</h3>
+</div>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600">calendar_month</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-gray-400">event</span>
+<span>Oct 24, 2024</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-gray-400">schedule</span>
+<span>10:00 AM</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+<span class="text-xs font-medium text-slate-400">Get notified when live</span>
+<button class="flex items-center justify-center gap-2 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 px-6 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 transition-colors">
+                        Notify Me
+                        <span class="material-symbols-outlined text-lg">notifications</span>
+</button>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 z-40 w-full bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 p-4 shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.1)]">
+<div class="flex items-center justify-between gap-4 max-w-lg mx-auto">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">₹999</span>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-[#1c190d] dark:text-white tracking-tight">₹499</span>
+<span class="text-[10px] font-bold text-green-700 bg-green-100 dark:bg-green-900/40 dark:text-green-400 px-1.5 py-0.5 rounded">50% OFF</span>
+</div>
+</div>
+<button class="flex-1 rounded-xl bg-primary hover:bg-primary-dark text-[#1c190d] font-bold py-3.5 px-6 shadow-md shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2 text-sm">
+                    Unlock Full Series
+                    <span class="material-symbols-outlined filled-icon text-lg">lock_open</span>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>

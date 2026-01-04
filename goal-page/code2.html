@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Exam Page - Variant 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700d1",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-dark": "#231933",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "md": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Sticky Header -->
+<div class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md transition-colors duration-200">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-800 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<div class="flex-1"></div> <!-- Spacer -->
+<button class="text-primary dark:text-primary font-medium text-sm">Skip</button>
+</div>
+<!-- Headline -->
+<div class="px-6 pb-2 pt-2">
+<h1 class="text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">What are you preparing for?</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Select your target exam to customize your learning.</p>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 pb-4">
+<div class="relative flex items-center w-full h-12 rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="grid place-items-center h-full w-12 text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+</div>
+<input class="peer h-full w-full outline-none text-sm text-gray-700 dark:text-white pr-2 bg-transparent placeholder-gray-400 font-normal" id="search" placeholder="Search exams (e.g. NEET, JEE)" type="text"/>
+</div>
+</div>
+<!-- Gradient separator for visual depth -->
+<div class="h-px w-full bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent"></div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar p-4 pb-24">
+<!-- Grid Layout -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Card 1: Selected State -->
+<div class="relative group cursor-pointer">
+<div class="absolute -inset-0.5 bg-primary rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-200"></div>
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border-2 border-primary shadow-lg transition-all transform scale-[1.02]">
+<!-- Checkmark Badge for Selected -->
+<div class="absolute top-3 right-3 flex items-center justify-center w-6 h-6 bg-primary rounded-full shadow-md z-10">
+<span class="material-symbols-outlined text-white" style="font-size: 16px; font-weight: 700;">check</span>
+</div>
+<div class="mb-3 p-3 bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">stethoscope</span>
+</div>
+<h3 class="text-base font-bold text-center text-gray-900 dark:text-white leading-tight">NEET 2026</h3>
+<p class="text-xs text-primary mt-1 font-medium">Medical</p>
+</div>
+</div>
+<!-- Card 2: Default State -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">engineering</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">JEE Main</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Engineering</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">account_balance</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">SSC CGL</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Government</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">local_police</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">UPSC CSE</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Civil Services</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">account_balance_wallet</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">Banking</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Finance</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">memory</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">GATE</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Postgrad</p>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">school</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">Class 12</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Board Exams</p>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col items-center justify-center p-4 h-40 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all">
+<div class="mb-3 p-3 bg-gray-100 dark:bg-white/5 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300" style="font-size: 32px;">menu_book</span>
+</div>
+<h3 class="text-base font-semibold text-center text-gray-900 dark:text-white leading-tight">CAT</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Management</p>
+</div>
+</div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-xs text-gray-500 dark:text-gray-400">Can't find your exam? <a class="text-primary hover:underline" href="#">See all categories</a></p>
+</div>
+</div>
+<!-- Sticky Footer CTA -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-30 p-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent pt-8">
+<button class="w-full flex items-center justify-center overflow-hidden rounded-xl h-14 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 active:scale-[0.98] transition-all duration-200 group">
+<span class="text-white text-lg font-bold tracking-wide mr-2">Confirm Goal</span>
+<span class="material-symbols-outlined text-white transition-transform group-hover:translate-x-1" style="font-size: 20px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

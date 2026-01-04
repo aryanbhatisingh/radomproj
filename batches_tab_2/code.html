@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Batches Tab</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700d1", // Deep Violet/Purple
+                        "background-light": "#f7f5f8", // Soft Off-White
+                        "background-dark": "#170f23", // Dark Purple/Black
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a2236",
+                        "accent-green": "#10b981",
+                        "accent-orange": "#f97316",
+                        "nav-inactive": "#94a3b8", // Slate 400
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "0.75rem", 
+                        "xl": "1rem", 
+                        "2xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'neumorph': '5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff',
+                    }
+                },
+            },
+        }
+    </script>
+<style>.hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 font-display antialiased transition-colors duration-300">
+<div class="relative flex flex-col h-full min-h-screen w-full max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden border-x border-gray-100 dark:border-gray-800">
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md pb-2">
+<div class="flex items-center justify-between px-4 py-3">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-gray-600 dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Batches</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-gray-600 dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-gray-600 dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="px-4 pb-2">
+<div class="flex p-1 bg-gray-200 dark:bg-surface-dark rounded-xl">
+<button class="flex-1 flex items-center justify-center py-2 px-4 rounded-lg bg-white dark:bg-gray-700 shadow-sm text-primary dark:text-white font-medium text-sm transition-all duration-200">
+                        All Batches
+                    </button>
+<button class="flex-1 flex items-center justify-center py-2 px-4 rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 font-medium text-sm transition-all duration-200">
+                        My Classroom
+                    </button>
+</div>
+</div>
+</div>
+<div class="flex-1 px-4 py-2 space-y-6 pb-24">
+<div class="space-y-4">
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all duration-300">
+<div class="flex gap-4">
+<div class="relative w-28 h-28 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract book stack and glasses for study concept" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLneCL63GwvdIc27ZNf8qzkULzmjuNe9biPnVL5pNfeqDoQHoBToAp0N-AqmUBzAJVYfcYrmsuGS9nDXv8hW4pP3UHVla3sHLaP2p8An-ARzEy-J7rKnBQF46IwxJV1iAp-4TW0Sqt1MJZ1poI_DvYYDhyjKLv0VwmYWac9p-eDMw0ahpx94FHx0XNm-vvbNiiHVpdgv82b58T28jJ0ZZoAcl6knMn8rrTrhumdOZZV2zxyiLnVdZG-GkKpppkjkPqfSUVhxVNTuw');">
+</div>
+<div class="absolute top-1 right-1 bg-white/90 dark:bg-black/80 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[10px]">star</span> 4.5
+                            </div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<h3 class="text-base font-bold text-gray-900 dark:text-white leading-tight mb-1 line-clamp-2">
+                                    SSC CGL 2025 Foundation
+                                </h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-sm">person</span>
+                                    Rahul Sir
+                                </p>
+</div>
+<div class="flex items-end justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹2,999</span>
+<span class="text-lg font-bold text-primary dark:text-white">₹999</span>
+</div>
+<button class="flex items-center justify-center h-8 px-3 rounded-lg border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 text-xs font-semibold bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 active:scale-95 transition-all">
+                                    Demo Available
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all duration-300">
+<div class="flex gap-4">
+<div class="relative w-28 h-28 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Students studying with laptop and notes from above" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCss6Fb2hGs-XxkRfGiBVipcfQ2Z3KfIKoyP-iYP8cRHkiC4CWm1OELWAD1EiuyfTro4LrgOD3eEogW3Tguwx8ioitK6sxbEETPo1Xk92Fqx7dmZeGAHBaqpgC3FfzpzZU2pSpnhyggHPQz4Okv9jA6hWlF-UDHigrvOcjk46lZC0wxgJX53n7fJZb9vS10YIRFZl8RY9lemY7k2DIn6jevtxLrEub6uFZwkAqG90SB63FOg9X9TLYnF8JMzlZDayZ1eUkEyy0-h-k');">
+</div>
+<div class="absolute top-1 right-1 bg-white/90 dark:bg-black/80 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[10px]">star</span> 4.8
+                            </div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<h3 class="text-base font-bold text-gray-900 dark:text-white leading-tight mb-1 line-clamp-2">
+                                    Banking PO 2025 Crash Course
+                                </h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-sm">person</span>
+                                    Neha Mam
+                                </p>
+</div>
+<div class="flex items-end justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹2,499</span>
+<span class="text-lg font-bold text-primary dark:text-white">₹1,499</span>
+</div>
+<button class="flex items-center justify-center h-8 px-3 rounded-lg border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 text-xs font-semibold bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 active:scale-95 transition-all">
+                                    Demo Available
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all duration-300">
+<div class="flex gap-4">
+<div class="relative w-28 h-28 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Open book with glasses on a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCw28D1xx9q4IqJTIP7MsOZlRdh1_X7b8_jZ9G4xZ3J_5hy9OhF9_21pJGU-5JrWEG0zdLafU5N5_cGyJEK28lKcFDLbnPiAJUgHIUVMDqHI6WdrqVgrmWBGR7BYwzR8RsRDe1Qru4OcjAsXE2phqaPvDpEOJMARjWpf8oPNmdNGqpdPcEJQbMPDTgjgyvyY96Xqee3pFoyCD_hGJHsSvHueJmYQQAydf0jbv6I41EB_0wP9eyZDbdycMM8u0KvdY9xu8LHoe_44rg');">
+</div>
+<div class="absolute top-1 right-1 bg-white/90 dark:bg-black/80 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[10px]">star</span> 4.2
+                            </div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<h3 class="text-base font-bold text-gray-900 dark:text-white leading-tight mb-1 line-clamp-2">
+                                    Railway NTPC Special Batch
+                                </h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-sm">person</span>
+                                    Exam Team
+                                </p>
+</div>
+<div class="flex items-end justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹999</span>
+<span class="text-lg font-bold text-primary dark:text-white">₹499</span>
+</div>
+<button class="flex items-center justify-center h-8 px-3 rounded-lg border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 text-xs font-semibold bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 active:scale-95 transition-all">
+                                    Demo Available
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden pt-4"> 
+<div class="space-y-4">
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all duration-300">
+<div class="flex gap-4">
+<div class="relative w-28 h-32 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Group of students discussing in library" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHX1HIxPJTvKu5z06zkab-Bu6HjL03c1ZCz3Ugp-FuS1Y5VlW6kpr0Dj_ZfG8wh97LzUfwNSg5_OQlaIrCC3MxRbExjq4xmrjhxBioo0syrLu5KznORcdCdNsNuDaopd7gwiXQiaC-2M-bWrFeFHz48vBzJxhXPYoewtybog0o8pQYBDI5ZNO_g-JvJn8K1Qf1FDYc9R_T-MggZIMP98INeL-Yqo3754lzl2A3q5_okkOxZRFNuV6sWiCz8jCj7DIu9K4aOA9oyBE');">
+</div>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<h3 class="text-base font-bold text-gray-900 dark:text-white leading-tight mb-2 line-clamp-2">
+                                        English Mastery 2025: Complete Course
+                                    </h3>
+<div class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 mb-3">
+<span class="material-symbols-outlined text-[10px] mr-1">verified_user</span>
+                                        Validity: 365 Days
+                                    </div>
+<div class="w-full mb-1">
+<div class="flex justify-between text-[10px] font-medium text-gray-500 dark:text-gray-400 mb-1">
+<span>Progress</span>
+<span>12%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5 overflow-hidden">
+<div class="bg-accent-green h-1.5 rounded-full" style="width: 12%"></div>
+</div>
+</div>
+</div>
+<div class="mt-2">
+<button class="w-full flex items-center justify-center h-9 rounded-xl bg-primary hover:bg-primary/90 text-white text-sm font-semibold shadow-lg shadow-primary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm mr-2">play_circle</span>
+                                        Study Now
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky bottom-0 bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 pb-safe z-50 rounded-t-2xl shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-end h-16 px-4 pb-2">
+<button class="flex flex-col items-center justify-center w-full group gap-1">
+<span class="material-symbols-outlined text-2xl text-primary font-variation-FILL-1">home</span>
+<span class="text-[10px] font-bold text-primary">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full group gap-1">
+<span class="material-symbols-outlined text-2xl text-nav-inactive dark:text-gray-500">school</span>
+<span class="text-[10px] font-medium text-nav-inactive dark:text-gray-500">Batches</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full group gap-1">
+<span class="material-symbols-outlined text-2xl text-nav-inactive dark:text-gray-500">quiz</span>
+<span class="text-[10px] font-medium text-nav-inactive dark:text-gray-500">Tests</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full group gap-1">
+<span class="material-symbols-outlined text-2xl text-nav-inactive dark:text-gray-500">description</span>
+<span class="text-[10px] font-medium text-nav-inactive dark:text-gray-500">Notes</span>
+</button>
+</div>
+</div>
+</div>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .font-variation-FILL-1 {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+
+</body></html>

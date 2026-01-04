@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Detail Page</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6e00",
+                        "accent-blue": "#0056D2",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23180f",
+                        "card-light": "#ffffff",
+                        "card-dark": "#322822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                        "bottom": "0 -4px 20px -5px rgba(0, 0, 0, 0.1)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#1d130c] dark:text-[#fcfaf8] antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden font-display pb-24">
+<div class="sticky top-0 z-30 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 justify-between border-b border-gray-100 dark:border-gray-800">
+<button class="text-[#1d130c] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-[#1d130c] dark:text-white text-lg font-bold leading-tight tracking-tight">Course Details</h2>
+<button class="text-[#1d130c] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">share</span>
+</button>
+</div>
+<div class="w-full aspect-video bg-black relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Students studying on laptop with books" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBK-ZYPFbFUFRmr95VH6ObT1uRxeBx31GgqEvtmpO0sX81XfKIx7Ww0YdwckB4vhZeW5IuT324oVHBioO_IEfKGNXwkQQ5YXZUZUz-5vdRoXihWj6lB3SKE8VxXmjaNWuESwFfkBoruPgv9mMsyF4RaOAecWTC0L6KWvxpGtu9XaIK0VDBv9sbk2YVlH_F932heRS2bSTmOJr8ATI_hXwV-2SqcGh52ha9Dx3xmYh2yvFph7NYs7BjO-4Jgdazx0r7H4Yt6i6qth1s");'></div>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-black/50 backdrop-blur-md border border-white/30 text-white hover:bg-black/60 transition-all transform group-hover:scale-105 shadow-xl">
+<span class="material-symbols-outlined text-3xl fill-1">play_circle</span>
+<span class="text-base font-bold tracking-wide">Play Demo</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col px-4 pt-4 gap-6">
+<div class="flex flex-col gap-2">
+<p class="text-accent-blue dark:text-blue-400 text-xs font-medium tracking-wide">Home &gt; SSC &gt; Foundation Batch</p>
+<h1 class="text-[#1d130c] dark:text-white text-2xl font-bold leading-snug">SSC CGL 2025: Complete Foundation Batch</h1>
+<div class="flex flex-wrap items-center gap-4 mt-1">
+<div class="flex items-center gap-1.5 bg-primary/10 px-2 py-1 rounded-lg">
+<span class="text-[#1d130c] dark:text-white font-bold text-sm">4.8</span>
+<span class="material-symbols-outlined text-primary text-sm fill-1">star</span>
+<span class="text-[#6b7280] dark:text-gray-400 text-xs">(12k Ratings)</span>
+</div>
+<div class="flex items-center gap-1.5 text-xs text-[#6b7280] dark:text-gray-400 font-medium">
+<span class="material-symbols-outlined text-base">groups</span>
+<span>45,000+ Students Enrolled</span>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-[#1d1d1d] to-[#0f0f0f] text-white rounded-2xl p-0.5 shadow-xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+<div class="bg-[#18181b] dark:bg-[#1e1e1e] rounded-[14px] p-5 h-full relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+<div class="flex justify-between items-start mb-5 pb-4 border-b border-white/10">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+</span>
+<span class="text-[11px] text-red-400 font-bold uppercase tracking-wider">Limited Time Offer</span>
+</div>
+<div class="flex gap-2 items-center mt-0.5">
+<div class="flex gap-1 font-mono text-xl font-bold text-white tracking-tight">
+<div class="bg-white/10 px-2 py-1 rounded text-center min-w-[36px]">05</div>
+<span class="self-center text-white/40">:</span>
+<div class="bg-white/10 px-2 py-1 rounded text-center min-w-[36px]">22</div>
+<span class="self-center text-white/40">:</span>
+<div class="bg-white/10 px-2 py-1 rounded text-center min-w-[36px] text-primary">15</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="bg-green-500 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-lg shadow-green-500/20 transform rotate-2">
+                66% OFF
+            </div>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-black text-white tracking-tight">₹999</span>
+<span class="text-lg text-white/40 line-through decoration-2 decoration-red-500/50">₹2,999</span>
+</div>
+<p class="text-[11px] text-white/50 mt-1 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                Inclusive of all taxes
+            </p>
+</div>
+<button class="bg-white text-black text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-100 transition active:scale-95">
+            Details
+        </button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-3 mt-2">
+<div class="group flex flex-col items-center gap-3 p-3 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:border-blue-200 dark:hover:border-blue-800 transition-all hover:shadow-md">
+<div class="size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-accent-blue dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[22px]">live_tv</span>
+</div>
+<div class="text-center w-full">
+<p class="text-[10px] text-gray-400 uppercase font-extrabold tracking-wider mb-0.5">Live</p>
+<p class="text-[13px] font-bold text-[#1d130c] dark:text-white leading-tight">500+ Hrs</p>
+</div>
+</div>
+<div class="group flex flex-col items-center gap-3 p-3 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:border-purple-200 dark:hover:border-purple-800 transition-all hover:shadow-md">
+<div class="size-11 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[22px] filled">description</span>
+</div>
+<div class="text-center w-full">
+<p class="text-[10px] text-gray-400 uppercase font-extrabold tracking-wider mb-0.5">PDFs</p>
+<p class="text-[13px] font-bold text-[#1d130c] dark:text-white leading-tight">200+ Files</p>
+</div>
+</div>
+<div class="group flex flex-col items-center gap-3 p-3 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:border-orange-200 dark:hover:border-orange-800 transition-all hover:shadow-md">
+<div class="size-11 rounded-xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[22px]">quiz</span>
+</div>
+<div class="text-center w-full">
+<p class="text-[10px] text-gray-400 uppercase font-extrabold tracking-wider mb-0.5">Tests</p>
+<p class="text-[13px] font-bold text-[#1d130c] dark:text-white leading-tight">50+ Mocks</p>
+</div>
+</div>
+<div class="group flex flex-col items-center gap-3 p-3 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:border-green-200 dark:hover:border-green-800 transition-all hover:shadow-md">
+<div class="size-11 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div class="text-center w-full">
+<p class="text-[10px] text-gray-400 uppercase font-extrabold tracking-wider mb-0.5">Valid</p>
+<p class="text-[13px] font-bold text-[#1d130c] dark:text-white leading-tight">1 Year</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 pt-2">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-[#1d130c] dark:text-white">Course Syllabus</h3>
+<button class="text-accent-blue dark:text-blue-400 text-sm font-medium">View Schedule</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-card-light dark:bg-card-dark rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<div class="p-3 pl-4 flex items-center justify-between cursor-pointer active:bg-gray-50 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 size-10 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">calculate</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-[#1d130c] dark:text-white">Mathematics</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">120 Videos • 15 Tests</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 pr-2">lock</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<div class="p-3 pl-4 flex items-center justify-between cursor-pointer active:bg-gray-50 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 size-10 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">public</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-[#1d130c] dark:text-white">General Studies</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">150 Videos • 20 Tests</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 pr-2">lock</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<div class="p-3 pl-4 flex items-center justify-between cursor-pointer active:bg-gray-50 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 size-10 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">psychology</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-[#1d130c] dark:text-white">Reasoning &amp; Logic</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">90 Videos • 10 Tests</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 pr-2">lock</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 pt-2">
+<h3 class="text-lg font-bold text-[#1d130c] dark:text-white">Learn from India’s Top Teachers</h3>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 pb-4 -mx-4 px-4">
+<div class="flex flex-col items-center gap-2 min-w-[100px]">
+<div class="relative size-20">
+<div class="size-20 rounded-full bg-gray-200 overflow-hidden border-2 border-primary p-0.5">
+<img alt="Gagan Sir Portrait" class="size-full rounded-full object-cover" data-alt="Close up of a man with glasses smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe3BmQgWJ7FLAvWM4PbLpFqebmL5Yo60UXkwOA0GK4a0CiaoMCqQxJ7BGtVrVgl0M7zhtfc0R5gdUwATA1Ju2fiS53Jm_Qoc4XHci39YhdpNjZv8y2BqGjPEajYO4NNZzkJIVTn6P2NEEjRyZ-ZNU2n-eiP3uA3oFeB3z9FMqK5MYPhWkGXLTbMnTabPx99ozyljBWtNYgrjf8OeV3DbwUJqoa5TyA9BRxBWslItKNb4-_rGoF9jO3vnulvsb-lKAJF2cY4ChvvG4"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white">
+                                4.9★
+                            </div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-[#1d130c] dark:text-white">Gagan Sir</p>
+<p class="text-xs text-gray-500">Maths</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[100px]">
+<div class="relative size-20">
+<div class="size-20 rounded-full bg-gray-200 overflow-hidden border-2 border-transparent p-0.5">
+<img alt="Rakesh Sir Portrait" class="size-full rounded-full object-cover" data-alt="Portrait of a young man in a jacket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn8Sn4KVey0V4udkQKxaDDHctxicAditR4LOoL46vOpmpwXw28i3uGVOfDWG4fBv3baPlhJYTXPyKnb4_IvvbTDb327xa4guFjJZq4UWJ7t0e2UlBEpNNpEYgY4Knc4HkdAyXB8JJvCI7fB9qxNweTYJLqiuH7idnSNvMCRlkwxFk8XswKU-b8ufBODwftOsVqKb1IOnat80bdUKJuEF_GnoZfWJG4lcyXExKk-AEZUJQfNHuDa92oyRB_-ri8aQ0s_OEtiYiNVq0"/>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-[#1d130c] dark:text-white">Rakesh Sir</p>
+<p class="text-xs text-gray-500">Reasoning</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[100px]">
+<div class="relative size-20">
+<div class="size-20 rounded-full bg-gray-200 overflow-hidden border-2 border-transparent p-0.5">
+<img alt="Neetu Ma'am Portrait" class="size-full rounded-full object-cover" data-alt="Portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6YRXOjnx65EvfiF3TQ1jK1ISJA035glC7FbWXhgqqiM4GQwvTCZKQEBlgrTONlD3pKvmxxgoxT3wthHz98qTnile6v6c1iI9yWyzh7rkT_xRZ4vrqqtCl4cTiDVBPKRFVLmRC5lLGcXXEgU8ZpejEMRozQmNb-156KiBiSNNDz4dTH-AKyuLJyv-QvL9LBLSRfQMDSSLcvZnoO8N9s07w0IEuAlSC0Wl6gk8s6V16lWdyZjzrSFl-Qi1NGti88WoXBhXw1E571Y"/>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-[#1d130c] dark:text-white">Neetu Ma'am</p>
+<p class="text-xs text-gray-500">English</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[100px]">
+<div class="relative size-20">
+<div class="size-20 rounded-full bg-gray-200 overflow-hidden border-2 border-transparent p-0.5">
+<img alt="Varun Sir Portrait" class="size-full rounded-full object-cover" data-alt="Portrait of a man looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoAGPaHiJioga7Hg9eyIS9aSUO75wJ6oB_akBTi9Mjl5OO2padIp0QGvNjMDUmwfyt4isQGoMkqx6GuVE3IoFC2R0sHTaBFkQzhlOZaYwRRZzDZQ4ZICqMG7hwkCY7PbhZfRlyZKr7u3l3ad7oSMwAbR18K2RH-2T9OwVKCjzYpIdAJjo_RbCXz1ZqATbPuMQsCw70YBfWbllxM4TPXYE9CQ_gUyEFAkFZdNHiG-HD1QgJ81fNBRNxX0xW57H54R1Mvnbq37IYNz8"/>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-[#1d130c] dark:text-white">Varun Sir</p>
+<p class="text-xs text-gray-500">Gen Studies</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-[#1d130c] dark:text-white">About the Course</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    This comprehensive foundation batch covers all subjects for SSC CGL 2025. Designed by top educators to help you master concepts from basic to advanced levels. Includes daily live classes, doubt clearing sessions, and extensive PDF notes.
+                </p>
+<button class="text-accent-blue dark:text-blue-400 text-sm font-bold self-start mt-1">Read More</button>
+</div>
+<div class="flex flex-col gap-4 pb-8">
+<h3 class="text-lg font-bold text-[#1d130c] dark:text-white">Frequently Asked Questions</h3>
+<div class="flex flex-col gap-3">
+<details class="group bg-white dark:bg-card-dark rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<summary class="flex justify-between items-center p-4 px-5 cursor-pointer list-none select-none">
+<span class="font-bold text-sm text-[#1d130c] dark:text-white">Is this batch recorded or live?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+</summary>
+<div class="px-5 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-700/50 pt-3">
+                            This batch is primarily conducted live to ensure interactive learning. However, all live sessions are recorded and made available in your dashboard within 2 hours, so you can watch them anytime later.
+                        </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<summary class="flex justify-between items-center p-4 px-5 cursor-pointer list-none select-none">
+<span class="font-bold text-sm text-[#1d130c] dark:text-white">Can I watch on a laptop?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+</summary>
+<div class="px-5 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-700/50 pt-3">
+                            Yes, absolutely! You can access all your enrolled courses on our website via any laptop or desktop. Your progress syncs automatically between the mobile app and the web version.
+                        </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<summary class="flex justify-between items-center p-4 px-5 cursor-pointer list-none select-none">
+<span class="font-bold text-sm text-[#1d130c] dark:text-white">Is the PDF printable?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-gray-500">expand_more</span>
+</summary>
+<div class="px-5 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-700/50 pt-3">
+                            Yes, all class notes and practice PDFs are downloadable and formatted specifically for printing, so you can study offline with ease.
+                        </div>
+</details>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 p-4 shadow-bottom z-40 safe-area-bottom">
+<div class="flex gap-4 items-center max-w-md mx-auto">
+<button class="flex flex-col items-center justify-center gap-1 text-gray-600 dark:text-gray-300 min-w-[60px]">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+<span class="text-[10px] font-medium">Support</span>
+</button>
+<button class="flex-1 bg-primary hover:bg-orange-600 text-white font-bold text-lg h-12 rounded-full shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+                    BUY NOW
+                    <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

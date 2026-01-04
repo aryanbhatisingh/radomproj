@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mock Test Engine - Active Test</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700D1", // Bold Purple for SAVE & NEXT
+                        "brand": "#004d61", // Deep Teal/Navy Blue
+                        "brand-light": "#006984",
+                        "accent-orange": "#f97316",
+                        "teal-selection": "#e0f2f1", 
+                        "teal-border": "#00897b", 
+                        "bg-soft": "#f4f6f8", // Soft Off-White
+                        "bg-dark": "#121212",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e1e1e",
+                        "text-primary": "#150c1d",
+                        "danger": "#ef4444", 
+                        "success": "#16a34a", 
+                        "warning": "#eab308", 
+                        "skipped": "#fee2e2", // Light Red for skipped background
+                        "skipped-text": "#b91c1c", // Dark Red for skipped text
+                        "answered": "#dcfce7", // Light Green for answered background
+                        "answered-text": "#15803d", // Dark Green for answered text
+                        "unvisited": "#f3f4f6", // Light Grey for unvisited background
+                        "unvisited-text": "#6b7280", // Dark Grey for unvisited text
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "body": ["Open Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "xl": "12px",
+                        "2xl": "16px", 
+                    },
+                    boxShadow: {
+                        "neumorph": "0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02)",
+                        "inner-soft": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }.mask-linear {
+            -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+            mask-image: linear-gradient(to right, black 90%, transparent 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-bg-soft dark:bg-bg-dark font-body text-text-primary h-[100dvh] flex flex-col overflow-hidden antialiased selection:bg-brand/20">
+<header class="bg-surface-light dark:bg-surface-dark shadow-neumorph z-30 shrink-0 relative flex flex-col">
+<div class="relative px-5 py-4 bg-white dark:bg-surface-dark border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<button aria-label="Exit Test" class="group flex items-center justify-center w-9 h-9 text-gray-400 hover:text-danger hover:bg-red-50 transition-all rounded-full active:scale-95">
+<span class="material-symbols-outlined font-semibold text-[22px]">arrow_back</span>
+</button>
+<div>
+<h1 class="text-base font-bold text-brand dark:text-gray-100 font-display leading-tight">Question 15</h1>
+<span class="text-xs text-gray-400 font-medium">of 100 Questions</span>
+</div>
+</div>
+<div class="bg-red-50 dark:bg-red-900/20 px-3 py-1.5 rounded-full border border-red-100 dark:border-red-800/30 flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-red-500 animate-pulse fill-current">timer</span>
+<span class="font-mono text-sm font-bold text-red-600 dark:text-red-400 tabular-nums tracking-tight">01:22:45</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative flex-1">
+<select class="w-full pl-10 pr-10 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 text-[15px] font-semibold text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 focus:border-brand focus:ring-2 focus:ring-brand/20 dark:focus:ring-brand-light font-display appearance-none cursor-pointer shadow-sm transition-all hover:bg-white hover:border-brand/40">
+<option value="maths">Maths</option>
+<option value="english">English</option>
+<option value="reasoning">Reasoning</option>
+<option value="general_awareness">General Awareness</option>
+</select>
+<div class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-brand dark:text-teal-400">
+<span class="material-symbols-outlined text-[20px]">library_books</span>
+</div>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<button class="flex-shrink-0 w-12 h-12 bg-white dark:bg-gray-800 text-brand dark:text-teal-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm transition-all flex items-center justify-center active:scale-95 group">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform">grid_view</span>
+</button>
+</div>
+</div>
+<div class="flex items-center px-4 py-3 gap-2 overflow-x-auto no-scrollbar mask-linear bg-white dark:bg-surface-dark border-b border-gray-100 dark:border-gray-800">
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-answered dark:bg-green-900/30 text-answered-text dark:text-green-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            1
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-skipped dark:bg-red-900/30 text-skipped-text dark:text-red-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            2
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-answered dark:bg-green-900/30 text-answered-text dark:text-green-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            3
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-answered dark:bg-green-900/30 text-answered-text dark:text-green-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            4
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-answered dark:bg-green-900/30 text-answered-text dark:text-green-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            5
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-skipped dark:bg-red-900/30 text-skipped-text dark:text-red-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            6
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-skipped dark:bg-red-900/30 text-skipped-text dark:text-red-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            7
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-answered dark:bg-green-900/30 text-answered-text dark:text-green-400 border border-transparent font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            8
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-unvisited dark:bg-gray-800 text-unvisited-text dark:text-gray-500 border border-gray-200 dark:border-gray-700 font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            9
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-unvisited dark:bg-gray-800 text-unvisited-text dark:text-gray-500 border border-gray-200 dark:border-gray-700 font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            10
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-unvisited dark:bg-gray-800 text-unvisited-text dark:text-gray-500 border border-gray-200 dark:border-gray-700 font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            11
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-unvisited dark:bg-gray-800 text-unvisited-text dark:text-gray-500 border border-gray-200 dark:border-gray-700 font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            12
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-unvisited dark:bg-gray-800 text-unvisited-text dark:text-gray-500 border border-gray-200 dark:border-gray-700 font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            13
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-unvisited dark:bg-gray-800 text-unvisited-text dark:text-gray-500 border border-gray-200 dark:border-gray-700 font-medium text-[13px] flex items-center justify-center transition-transform active:scale-95">
+            14
+        </button>
+<button class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand text-white border border-brand font-bold text-[13px] flex items-center justify-center shadow-md ring-2 ring-offset-2 ring-brand/20 dark:ring-offset-surface-dark transition-transform active:scale-95">
+            15
+        </button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto w-full scroll-smooth bg-bg-soft dark:bg-bg-dark p-4 pb-40">
+<div class="max-w-md mx-auto space-y-4">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-neumorph p-5 border border-white dark:border-gray-800">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 text-xs font-bold font-display bg-gray-50 dark:bg-gray-800/50 px-2.5 py-1.5 rounded-lg border border-gray-100 dark:border-gray-700">
+<span class="text-success tracking-wide">+2.0</span>
+<span class="text-gray-300">|</span>
+<span class="text-danger tracking-wide">-0.5</span>
+</div>
+<button class="text-gray-300 hover:text-warning transition-colors p-1">
+<span class="material-symbols-outlined text-[20px] fill-current">bookmark</span>
+</button>
+</div>
+<p class="text-[17px] text-gray-800 dark:text-gray-100 font-medium leading-relaxed font-display mb-4">
+                If A can do a piece of work in 10 days and B in 15 days, how long will they take working together?
+            </p>
+<div class="relative group w-full h-44 bg-slate-50 dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-700 overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#004d61 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="text-center z-10">
+<span class="material-symbols-outlined text-4xl text-brand/30 dark:text-teal-400/20 mb-1">bar_chart_4_bars</span>
+<p class="text-xs text-gray-400 font-display">Time &amp; Work Diagram</p>
+</div>
+<button class="absolute bottom-2 right-2 bg-surface-light/90 dark:bg-surface-dark/90 hover:bg-brand hover:text-white dark:hover:bg-brand text-gray-500 dark:text-gray-300 p-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 transition-all transform active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">zoom_in</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="relative flex items-center gap-4 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-transparent shadow-sm hover:shadow-md cursor-pointer transition-all group overflow-hidden ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-brand/30">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-brand peer-checked:border-[6px] transition-all flex-shrink-0"></div>
+<span class="font-body font-medium text-[15px] text-gray-700 dark:text-gray-200 peer-checked:text-brand dark:peer-checked:text-teal-400 z-10 transition-colors">5 Days</span>
+<div class="absolute inset-0 bg-brand/5 dark:bg-brand/20 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+<div class="absolute inset-0 border-2 border-brand dark:border-teal-500 rounded-xl opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</label>
+<label class="relative flex items-center gap-4 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-transparent shadow-sm hover:shadow-md cursor-pointer transition-all group overflow-hidden ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-brand/30">
+<input checked="" class="peer sr-only" name="answer" type="radio"/>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-brand peer-checked:border-[6px] transition-all flex-shrink-0"></div>
+<span class="font-body font-medium text-[15px] text-gray-700 dark:text-gray-200 peer-checked:text-brand dark:peer-checked:text-teal-400 z-10 transition-colors">6 Days</span>
+<div class="absolute inset-0 bg-brand/5 dark:bg-brand/20 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+<div class="absolute inset-0 border-2 border-brand dark:border-teal-500 rounded-xl opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</label>
+<label class="relative flex items-center gap-4 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-transparent shadow-sm hover:shadow-md cursor-pointer transition-all group overflow-hidden ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-brand/30">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-brand peer-checked:border-[6px] transition-all flex-shrink-0"></div>
+<span class="font-body font-medium text-[15px] text-gray-700 dark:text-gray-200 peer-checked:text-brand dark:peer-checked:text-teal-400 z-10 transition-colors">8 Days</span>
+<div class="absolute inset-0 bg-brand/5 dark:bg-brand/20 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+<div class="absolute inset-0 border-2 border-brand dark:border-teal-500 rounded-xl opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</label>
+<label class="relative flex items-center gap-4 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-transparent shadow-sm hover:shadow-md cursor-pointer transition-all group overflow-hidden ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-brand/30">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-brand peer-checked:border-[6px] transition-all flex-shrink-0"></div>
+<span class="font-body font-medium text-[15px] text-gray-700 dark:text-gray-200 peer-checked:text-brand dark:peer-checked:text-teal-400 z-10 transition-colors">7.5 Days</span>
+<div class="absolute inset-0 bg-brand/5 dark:bg-brand/20 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+<div class="absolute inset-0 border-2 border-brand dark:border-teal-500 rounded-xl opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</label>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 pt-3 pb-6 px-4 shadow-[0_-8px_30px_rgba(0,0,0,0.04)]">
+<div class="max-w-md mx-auto flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<button class="text-gray-400 hover:text-warning dark:text-gray-500 dark:hover:text-yellow-400 font-semibold text-[11px] uppercase tracking-wider flex items-center gap-1.5 transition-colors group">
+<span class="material-symbols-outlined text-[18px] group-hover:fill-current">star</span>
+                Mark for Review
+            </button>
+<button class="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 font-semibold text-[11px] uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">backspace</span>
+                Clear Response
+            </button>
+</div>
+<button class="w-full bg-primary hover:bg-[#4a00b3] text-white text-[15px] font-bold font-display py-3.5 rounded-xl shadow-lg shadow-primary/25 active:scale-[0.98] active:shadow-sm transition-all flex items-center justify-center gap-2">
+            SAVE &amp; NEXT
+            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>

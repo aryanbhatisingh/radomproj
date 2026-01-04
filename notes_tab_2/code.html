@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-Books &amp; Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700d1",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a2136",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(87, 0, 209, 0.08)",
+                        "inner-soft": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: max(884px, 100dvh);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }body:has(input[name="view_mode"][value="store"]:checked) #shelf-view {
+            display: none;
+        }body:has(input[name="view_mode"][value="shelf"]:checked) #store-view {
+            display: none;
+        }#store-view, #shelf-view {
+            animation: fade-in 0.25s ease-out;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#130c1d] dark:text-gray-100 min-h-screen flex flex-col transition-colors duration-200">
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center justify-between px-4 py-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full active:bg-gray-200 dark:active:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-gray-800 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-gray-900 dark:text-white flex-1 text-center">E-Books &amp; Notes</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full active:bg-gray-200 dark:active:bg-gray-700 transition-colors relative">
+<span class="material-symbols-outlined text-primary dark:text-primary-300" style="font-size: 24px;">shopping_cart</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-background-dark"></span>
+</button>
+</div>
+<div class="px-4 pb-3">
+<div class="flex p-1 bg-gray-200/50 dark:bg-white/5 rounded-2xl relative">
+<label class="flex-1 relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="view_mode" type="radio" value="store"/>
+<div class="flex items-center justify-center py-2.5 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl transition-all duration-300 peer-checked:bg-white dark:peer-checked:bg-primary peer-checked:text-primary dark:peer-checked:text-white peer-checked:shadow-sm">
+                        Notes Store
+                    </div>
+</label>
+<label class="flex-1 relative cursor-pointer group">
+<input class="peer sr-only" name="view_mode" type="radio" value="shelf"/>
+<div class="flex items-center justify-center py-2.5 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl transition-all duration-300 peer-checked:bg-white dark:peer-checked:bg-primary peer-checked:text-primary dark:peer-checked:text-white peer-checked:shadow-sm">
+                        My Shelf
+                    </div>
+</label>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<div class="px-4 py-3 flex gap-3 items-center sticky top-[116px] z-40 bg-background-light dark:bg-background-dark transition-colors duration-200">
+<div class="flex-1 flex items-center bg-white dark:bg-surface-dark rounded-xl px-3 py-2.5 shadow-sm border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 mr-2" style="font-size: 20px;">search</span>
+<input class="bg-transparent border-none outline-none text-sm w-full text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 p-0 focus:ring-0" placeholder="Search for books, notes..." type="text"/>
+</div>
+<button class="flex items-center justify-center w-11 h-11 bg-primary/10 dark:bg-primary/20 rounded-xl text-primary dark:text-primary-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 24px;">tune</span>
+</button>
+</div>
+<section class="px-4 mt-2" id="store-view">
+<div class="flex justify-between items-end mb-4">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Featured Books</h2>
+<a class="text-sm font-semibold text-primary dark:text-primary-300" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group bg-white dark:bg-surface-dark rounded-2xl p-3 shadow-soft flex flex-col gap-3 transition-transform active:scale-[0.98]">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cover of General Awareness 2025 book with abstract geometric shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClyxhPAl4PZXmKk5lqe99Bhr-rWfNb5rPanEuVn8ofxyCu11cO3Cv9FNy3yQHwXCAnW5mlJBt0_AHfXByotTMI_SHpDvewTDVzmpEAIwBjyk0CVcEW1COAkJBtUMyqAE0KlWtr4ABLR94PUO1g9Fq1OfLzKsPMcsHaDCQybyRSBmJUaG9qbnkqbmiU3vytS1dGZhiJyq7VnItuR2DwlryY6uIHPyfK_76cinZnHHT7HrKKx8KoQRj2WIP55OcJoKjxzvoSJS5jc9g');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
+<button class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+</div>
+<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-md">NEW</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight min-h-[2.5em]">General Awareness 2025</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">By ExamExperts</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹49</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-surface-dark rounded-2xl p-3 shadow-soft flex flex-col gap-3 transition-transform active:scale-[0.98]">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cover of Quantitative Aptitude book with mathematical symbols" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHXPOjbfwgHtDHWbzHrDuu6-WYVFsmLJNy3Jjti7KnJxr1rQPaJ1WtsA1O-1hh_D0Z0B8Bax1Sy5H_UanCSkl-7xWGgsbxz4UOmHt7j1sNiQ_0Vxx7t8qThp65hIvxiB9qJPhI11KWFfzKSWsQGKX1qLkvlMWrNu514JKgI16xfgvpgb3B8xGgaiHTwU2zszdhl9l123Myw8CivdTKZXZqHAEcpzNTMxF31SQbRfjxQ4ySq5404BKX08IMaGQUVAgeENX21ASuK0k');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
+<button class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight min-h-[2.5em]">Quantitative Aptitude Vol 1</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">By MathWiz</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹199</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-surface-dark rounded-2xl p-3 shadow-soft flex flex-col gap-3 transition-transform active:scale-[0.98]">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cover of English Grammar text book" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEnad_Y0QK1wtwh_2I3rqQUKwra4WyaKXYdlJ7keHvns5SYpTUZbY1RkHpITJcLsKfyNbS_udgLEzrVOM36rtrMkhy6yVHITUT2mTwDokkyygKcXHFGKyrIFWSOF7-Wr49fi97va9aIyNW6lr3CMnHBc6R8IQvUACUBCDQUeJ-nA28-pKzYcqUEeSA81ZAtGSfynA3QsumV2tyLWS1sWc5DQ2ub0yfU_5tM8hTjFDYWZwCIzn3MVDVDRULkRULRv9ACLbRrI_na6o');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
+<button class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+</div>
+<div class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">-20%</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight min-h-[2.5em]">English Grammar Masterclass</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">By LanguageHub</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-baseline gap-1">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹80</span>
+<span class="text-xs text-gray-400 line-through">₹100</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-surface-dark rounded-2xl p-3 shadow-soft flex flex-col gap-3 transition-transform active:scale-[0.98]">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cover of Reasoning Logic book with puzzle elements" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaXmgCvflXYiXosrjRN74gQR0Pa0qQMvCJKO9E2KHhffT12AO6Z4XfUt9ScP0jsqonf0SVhVVeFvfF_oNpzLdVpxuF3JaS3kcC-QFZegJb3gsCIL9l47BgcSPG03IeYlqyl52KWuRdNWJaq47tuR--ROnffwr_Hwo3iF8u8oxCz-TxCLd06pAGrkkAal8qxNJFM8jRRRnuohGxdrEfsPz3cXAY1GyMOhtmCSJKNh15aMn98EtDRRufuLU2WHqhzP0VcLRV19zdPag');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
+<button class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight min-h-[2.5em]">Reasoning Logic &amp; Puzzles</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">By ThinkSmart</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹120</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 mb-4">
+<div class="flex justify-between items-end mb-4">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Best Sellers</h2>
+<a class="text-sm font-semibold text-primary dark:text-primary-300" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-soft flex gap-4 items-center">
+<div class="relative w-16 h-20 rounded-lg overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEnad_Y0QK1wtwh_2I3rqQUKwra4WyaKXYdlJ7keHvns5SYpTUZbY1RkHpITJcLsKfyNbS_udgLEzrVOM36rtrMkhy6yVHITUT2mTwDokkyygKcXHFGKyrIFWSOF7-Wr49fi97va9aIyNW6lr3CMnHBc6R8IQvUACUBCDQUeJ-nA28-pKzYcqUEeSA81ZAtGSfynA3QsumV2tyLWS1sWc5DQ2ub0yfU_5tM8hTjFDYWZwCIzn3MVDVDRULkRULRv9ACLbRrI_na6o');"></div>
+<div class="absolute top-0 left-0 bg-yellow-400 text-black text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-br-lg shadow-sm">1</div>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-1">English Grammar Masterclass</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">By LanguageHub</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] filled">star</span>
+<span class="text-xs font-bold text-gray-900 dark:text-white">4.8</span>
+<span class="text-xs text-gray-400">(1.2k)</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹80</span>
+<button class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md hover:bg-primary/90 transition-colors">Buy</button>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-soft flex gap-4 items-center">
+<div class="relative w-16 h-20 rounded-lg overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClyxhPAl4PZXmKk5lqe99Bhr-rWfNb5rPanEuVn8ofxyCu11cO3Cv9FNy3yQHwXCAnW5mlJBt0_AHfXByotTMI_SHpDvewTDVzmpEAIwBjyk0CVcEW1COAkJBtUMyqAE0KlWtr4ABLR94PUO1g9Fq1OfLzKsPMcsHaDCQybyRSBmJUaG9qbnkqbmiU3vytS1dGZhiJyq7VnItuR2DwlryY6uIHPyfK_76cinZnHHT7HrKKx8KoQRj2WIP55OcJoKjxzvoSJS5jc9g');"></div>
+<div class="absolute top-0 left-0 bg-gray-300 text-black text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-br-lg shadow-sm">2</div>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-1">General Awareness 2025</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">By ExamExperts</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] filled">star</span>
+<span class="text-xs font-bold text-gray-900 dark:text-white">4.7</span>
+<span class="text-xs text-gray-400">(950)</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹49</span>
+<button class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md hover:bg-primary/90 transition-colors">Buy</button>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-soft flex gap-4 items-center">
+<div class="relative w-16 h-20 rounded-lg overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHXPOjbfwgHtDHWbzHrDuu6-WYVFsmLJNy3Jjti7KnJxr1rQPaJ1WtsA1O-1hh_D0Z0B8Bax1Sy5H_UanCSkl-7xWGgsbxz4UOmHt7j1sNiQ_0Vxx7t8qThp65hIvxiB9qJPhI11KWFfzKSWsQGKX1qLkvlMWrNu514JKgI16xfgvpgb3B8xGgaiHTwU2zszdhl9l123Myw8CivdTKZXZqHAEcpzNTMxF31SQbRfjxQ4ySq5404BKX08IMaGQUVAgeENX21ASuK0k');"></div>
+<div class="absolute top-0 left-0 bg-orange-300 text-black text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-br-lg shadow-sm">3</div>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-1">Quantitative Aptitude Vol 1</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">By MathWiz</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] filled">star</span>
+<span class="text-xs font-bold text-gray-900 dark:text-white">4.6</span>
+<span class="text-xs text-gray-400">(820)</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-base font-bold text-primary dark:text-primary-300">₹199</span>
+<button class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md hover:bg-primary/90 transition-colors">Buy</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 mt-6" id="shelf-view">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Recent Downloads</h2>
+<button class="flex items-center gap-1 bg-gray-100 dark:bg-white/5 px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filter
+                </button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-sm flex items-center gap-4 transition-transform active:scale-[0.99]">
+<div class="w-12 h-12 shrink-0 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-500 dark:text-red-400">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-gray-900 dark:text-white truncate">Monthly Current Affairs - Oct</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">2.4 MB • Purchased Oct 12</p>
+</div>
+<button class="w-10 h-10 flex shrink-0 items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-sm flex items-center gap-4 transition-transform active:scale-[0.99]">
+<div class="w-12 h-12 shrink-0 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center text-blue-500 dark:text-blue-400">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-gray-900 dark:text-white truncate">Quant Formula Cheat Sheet</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Purchased Oct 10</p>
+</div>
+<button class="w-10 h-10 flex shrink-0 items-center justify-center rounded-full bg-gray-50 dark:bg-gray-800 text-primary dark:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined">cloud_download</span>
+</button>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-sm flex items-center gap-4 transition-transform active:scale-[0.99]">
+<div class="w-12 h-12 shrink-0 bg-purple-50 dark:bg-purple-900/20 rounded-xl flex items-center justify-center text-purple-500 dark:text-purple-400">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-gray-900 dark:text-white truncate">SBI PO Prelims Paper</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">1.8 MB • Purchased Oct 05</p>
+</div>
+<button class="w-10 h-10 flex shrink-0 items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-white/5 pb-5 pt-3 px-6 z-50">
+<ul class="flex justify-between items-center">
+<li>
+<a class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="text-[10px] font-medium">Batches</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">leaderboard</span>
+<span class="text-[10px] font-medium">Tests</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary-300" href="#">
+<span class="material-symbols-outlined filled text-[24px] font-variation-settings-'FILL'1">library_books</span>
+<span class="text-[10px] font-medium">Notes</span>
+</a>
+</li>
+</ul>
+</nav>
+
+</body></html>

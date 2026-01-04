@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Test Builder Selector</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f49d25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221a10",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c241b",
+                        "text-main-light": "#1c160d",
+                        "text-main-dark": "#f0e6d9",
+                        "text-secondary-light": "#9c7a49",
+                        "text-secondary-dark": "#b0a28e",
+                        "border-light": "#e8ddce",
+                        "border-dark": "#3e3226",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                        "glow": "0 0 15px rgba(244, 157, 37, 0.3)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #e8ddce;
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #3e3226;
+        }
+        
+        /* Hide default summary marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main-light dark:text-text-main-dark antialiased h-screen flex flex-col overflow-hidden selection:bg-primary/30">
+<!-- Header Section -->
+<header class="flex-none bg-background-light dark:bg-background-dark pt-12 pb-2 px-4 transition-colors duration-300 z-10">
+<div class="flex items-center justify-between mb-4">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-text-main-light dark:text-text-main-dark" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Select Subjects</h2>
+</div>
+<!-- Progress Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-2 pb-2">
+<!-- Active Step -->
+<div class="h-1.5 w-8 rounded-full bg-primary shadow-glow"></div>
+<!-- Inactive Steps -->
+<div class="h-1.5 w-1.5 rounded-full bg-border-light dark:bg-border-dark"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-border-light dark:bg-border-dark"></div>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-4 pb-24" id="main-content">
+<!-- Headline Section -->
+<div class="py-4">
+<h1 class="text-2xl md:text-3xl font-bold leading-tight mb-2">Create Custom Test</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm md:text-base font-normal leading-relaxed">
+                Select subjects and chapters to include in your practice test.
+            </p>
+</div>
+<!-- Subjects List -->
+<div class="flex flex-col gap-4 mt-2">
+<!-- Subject Card 1: Physics (Expanded/Active) -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark border border-primary shadow-soft transition-all duration-300">
+<!-- Header (Always visible) -->
+<div class="flex cursor-pointer items-center justify-between p-4 pb-2">
+<div class="flex items-center gap-3">
+<!-- Checkbox: Checked -->
+<button class="text-primary hover:text-primary/80 transition-colors">
+<span class="material-symbols-outlined fill-1" style="font-size: 24px; font-variation-settings: 'FILL' 1;">check_box</span>
+</button>
+<span class="text-base font-semibold">Physics</span>
+</div>
+<!-- Chevron -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:bg-black/5 dark:hover:bg-white/5 rounded-full p-1 transition-transform transform rotate-180">
+<span class="material-symbols-outlined" style="font-size: 24px;">expand_more</span>
+</button>
+</div>
+<!-- Expanded Content -->
+<div class="px-4 pb-4 animate-fadeIn">
+<div class="pl-9 pt-2 border-t border-dashed border-border-light dark:border-border-dark mt-2">
+<!-- Select All Toggle -->
+<div class="flex items-center justify-between py-3 mb-1">
+<span class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Select All Chapters</span>
+<button class="text-primary flex items-center">
+<span class="material-symbols-outlined text-4xl" style="font-size: 36px; font-variation-settings: 'FILL' 1;">toggle_on</span>
+</button>
+</div>
+<!-- Chapters List -->
+<div class="flex flex-col gap-3">
+<!-- Chapter 1 -->
+<div class="flex items-center gap-3 py-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 22px; font-variation-settings: 'FILL' 1;">check_box</span>
+<span class="text-sm font-medium">Kinematics</span>
+</div>
+<!-- Chapter 2 -->
+<div class="flex items-center gap-3 py-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 22px; font-variation-settings: 'FILL' 1;">check_box</span>
+<span class="text-sm font-medium">Laws of Motion</span>
+</div>
+<!-- Chapter 3 -->
+<div class="flex items-center gap-3 py-1">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark opacity-50" style="font-size: 22px;">check_box_outline_blank</span>
+<span class="text-sm font-medium text-text-main-light dark:text-text-main-dark">Thermodynamics</span>
+</div>
+<!-- Chapter 4 -->
+<div class="flex items-center gap-3 py-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 22px; font-variation-settings: 'FILL' 1;">check_box</span>
+<span class="text-sm font-medium">Work, Energy &amp; Power</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Subject Card 2: Chemistry (Collapsed) -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex cursor-pointer items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<!-- Checkbox: Unchecked -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">check_box_outline_blank</span>
+</button>
+<span class="text-base font-semibold">Chemistry</span>
+</div>
+<!-- Chevron -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:bg-black/5 dark:hover:bg-white/5 rounded-full p-1 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 24px;">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Subject Card 3: Mathematics (Collapsed) -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex cursor-pointer items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<!-- Checkbox: Unchecked -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">check_box_outline_blank</span>
+</button>
+<span class="text-base font-semibold">Mathematics</span>
+</div>
+<!-- Chevron -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:bg-black/5 dark:hover:bg-white/5 rounded-full p-1 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 24px;">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Subject Card 4: Biology (Collapsed) -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex cursor-pointer items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<!-- Checkbox: Unchecked -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">check_box_outline_blank</span>
+</button>
+<span class="text-base font-semibold">Biology</span>
+</div>
+<!-- Chevron -->
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:bg-black/5 dark:hover:bg-white/5 rounded-full p-1 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 24px;">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Spacer -->
+<div class="h-8"></div>
+</main>
+<!-- Sticky Footer -->
+<footer class="fixed bottom-0 left-0 w-full z-20">
+<!-- Gradient Overlay to fade content behind footer -->
+<div class="absolute bottom-full left-0 w-full h-8 bg-gradient-to-t from-background-light to-transparent dark:from-background-dark pointer-events-none"></div>
+<div class="bg-background-light dark:bg-background-dark px-4 pb-8 pt-2">
+<button class="w-full bg-primary hover:bg-yellow-500 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span>Continue</span>
+<span class="bg-white/20 px-2 py-0.5 rounded text-sm font-semibold">1 Subject Selected</span>
+<span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Test Result Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5805cc",
+                        "primary-glow": "#7c3aed",
+                        "secondary": "#a855f7",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#0f0c16", // Deepened for better contrast
+                        "glass-border": "rgba(255, 255, 255, 0.08)",
+                        "glass-bg": "rgba(255, 255, 255, 0.03)",
+                        "success": "#10b981",
+                        "danger": "#ef4444",
+                        "warning": "#fbbf24",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Utilities for Glassmorphism */
+        .glass-panel {
+            background: rgba(30, 27, 46, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-btn {
+            background: rgba(88, 5, 204, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        /* Circular Progress Utilities */
+        .circle-chart {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 250px;
+        }
+        .circle-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 2.5;
+        }
+        .circle-bar {
+            fill: none;
+            stroke: #5805cc;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            /* 145/200 = 72.5% */
+            stroke-dasharray: 72.5, 100; 
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+        
+        /* Background Glows */
+        .ambient-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(88,5,204,0.4) 0%, rgba(0,0,0,0) 70%);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-white">
+<!-- Ambient Background Glow -->
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+<div class="ambient-glow"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full translate-y-1/2 translate-x-1/2"></div>
+</div>
+<!-- Main Container -->
+<div class="relative z-10 flex flex-col min-h-screen max-w-md mx-auto overflow-hidden pb-24">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pt-6 sticky top-0 z-50">
+<button class="flex items-center justify-center w-10 h-10 rounded-full glass-card hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined text-xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-base font-semibold tracking-wide text-white/90">Result Overview</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full glass-card hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+</header>
+<!-- Hero Section: Score Circle -->
+<section class="flex flex-col items-center justify-center pt-4 pb-8 relative">
+<!-- Score Circle -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- SVG Circle Chart -->
+<svg class="circle-chart w-full h-full drop-shadow-[0_0_15px_rgba(88,5,204,0.4)]" viewbox="0 0 36 36">
+<path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+<path class="circle-bar" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="72.5, 100"></path>
+</svg>
+<!-- Inner Content -->
+<div class="absolute inset-0 flex flex-col items-center justify-center z-10">
+<div class="flex flex-col items-center">
+<span class="text-5xl font-bold tracking-tighter text-white drop-shadow-md">145</span>
+<div class="w-12 h-[1px] bg-white/20 my-1"></div>
+<span class="text-xl font-medium text-white/60">200</span>
+</div>
+</div>
+<!-- Decorative blurry circles inside -->
+<div class="absolute inset-4 rounded-full bg-primary/5 blur-xl"></div>
+</div>
+<!-- Chips: Rank & Percentile -->
+<div class="flex items-center gap-3 mt-4">
+<div class="glass-card px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-400 text-sm">emoji_events</span>
+<span class="text-sm font-medium text-white/90">Rank: <span class="font-bold text-white">#420</span></span>
+</div>
+<div class="glass-card px-4 py-1.5 rounded-full flex items-center gap-2 border-primary/30 bg-primary/10">
+<span class="material-symbols-outlined text-primary-glow text-sm">auto_graph</span>
+<span class="text-sm font-medium text-white/90">96.4%ile</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Analytics -->
+<section class="px-4 space-y-4">
+<div class="grid grid-cols-2 gap-3">
+<!-- Time Card -->
+<div class="glass-card rounded-2xl p-4 flex flex-col justify-between h-36 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-4xl">timer</span>
+</div>
+<div>
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Time Taken</p>
+<h3 class="text-2xl font-bold text-white mt-1">52m</h3>
+</div>
+<div class="mt-auto">
+<div class="flex items-center gap-2 text-xs text-white/50 mb-1">
+<span>Avg. Time</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-sm font-semibold text-white/80">48m</span>
+<span class="text-[10px] text-red-400 mb-0.5">+4m slow</span>
+</div>
+<!-- Micro progress bar -->
+<div class="w-full h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-orange-400 rounded-full w-[80%]"></div>
+</div>
+</div>
+</div>
+<!-- Accuracy Card -->
+<div class="glass-card rounded-2xl p-4 flex flex-col justify-between h-36 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/20 blur-2xl rounded-full"></div>
+<div>
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Accuracy</p>
+</div>
+<div class="flex flex-col items-center justify-center flex-1 mt-2">
+<!-- Semi circle gauge mock using CSS borders -->
+<div class="relative w-24 h-12 overflow-hidden">
+<div class="absolute top-0 left-0 w-24 h-24 rounded-full border-[6px] border-white/10"></div>
+<div class="absolute top-0 left-0 w-24 h-24 rounded-full border-[6px] border-l-transparent border-b-transparent border-r-transparent border-emerald-400 rotate-[-45deg]"></div>
+</div>
+<div class="text-center -mt-6">
+<h3 class="text-2xl font-bold text-white">82%</h3>
+<p class="text-[10px] text-emerald-400 font-medium">Excellent</p>
+</div>
+</div>
+</div>
+<!-- Comparison Card -->
+<div class="glass-card rounded-2xl p-5 col-span-2 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Performance vs Topper</p>
+<span class="material-symbols-outlined text-white/30 text-lg">bar_chart</span>
+</div>
+<!-- Bar Chart Area -->
+<div class="flex items-end justify-around h-32 w-full pt-4 px-2 gap-4">
+<!-- You -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity">145</div>
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg relative h-[60%] group-hover:shadow-[0_0_15px_rgba(88,5,204,0.5)] transition-all"></div>
+<span class="text-xs font-medium text-white/80">You</span>
+</div>
+<!-- Topper -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="text-xs font-bold text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">198</div>
+<div class="w-full max-w-[40px] bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-t-lg relative h-[95%] group-hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] transition-all">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2">
+<span class="material-symbols-outlined text-yellow-400 text-sm">crown</span>
+</div>
+</div>
+<span class="text-xs font-medium text-yellow-400">Topper</span>
+</div>
+<!-- Average -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="text-xs font-bold text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">92</div>
+<div class="w-full max-w-[40px] bg-white/20 rounded-t-lg relative h-[45%]"></div>
+<span class="text-xs font-medium text-white/50">Avg</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subject Wise Analysis -->
+<section class="px-4 mt-6">
+<h2 class="text-lg font-bold text-white mb-4">Subject Analysis</h2>
+<div class="glass-card rounded-2xl p-1 overflow-hidden">
+<!-- Physics -->
+<div class="p-4 border-b border-white/5">
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-white">Physics</span>
+<span class="text-xs text-white/60">45/60 Marks</span>
+</div>
+<!-- Multi-segment Progress Bar -->
+<div class="h-2.5 w-full bg-white/5 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500 w-[65%]"></div>
+<div class="h-full bg-rose-500 w-[15%]"></div>
+<div class="h-full bg-slate-600 w-[20%]"></div>
+</div>
+<div class="flex justify-between mt-1.5 text-[10px] text-white/40">
+<span>Correct</span>
+<span>Skipped</span>
+</div>
+</div>
+<!-- Chemistry -->
+<div class="p-4 border-b border-white/5">
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-white">Chemistry</span>
+<span class="text-xs text-white/60">55/70 Marks</span>
+</div>
+<div class="h-2.5 w-full bg-white/5 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500 w-[78%]"></div>
+<div class="h-full bg-rose-500 w-[5%]"></div>
+<div class="h-full bg-slate-600 w-[17%]"></div>
+</div>
+</div>
+<!-- Biology -->
+<div class="p-4">
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-white">Biology</span>
+<span class="text-xs text-white/60">45/70 Marks</span>
+</div>
+<div class="h-2.5 w-full bg-white/5 rounded-full flex overflow-hidden">
+<div class="h-full bg-emerald-500 w-[64%]"></div>
+<div class="h-full bg-rose-500 w-[20%]"></div>
+<div class="h-full bg-slate-600 w-[16%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Weak Areas Tags -->
+<section class="px-4 mt-6 mb-8">
+<h2 class="text-lg font-bold text-white mb-3">Your Weak Areas</h2>
+<div class="flex flex-wrap gap-2">
+<span class="glass-card border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 rounded-full text-xs font-medium text-rose-300">Optics</span>
+<span class="glass-card border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 rounded-full text-xs font-medium text-rose-300">Thermodynamics</span>
+<span class="glass-card border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 rounded-full text-xs font-medium text-rose-300">Rotational Motion</span>
+<span class="glass-card border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 rounded-full text-xs font-medium text-rose-300">Integration</span>
+</div>
+</section>
+<!-- Sticky Footer Action Area -->
+<div class="fixed bottom-0 left-0 right-0 glass-panel p-4 pb-6 z-50 rounded-t-3xl border-t border-white/10 max-w-md mx-auto">
+<div class="flex gap-4">
+<button class="flex-1 py-3.5 px-6 rounded-full border border-white/20 text-white font-semibold text-sm hover:bg-white/5 transition-colors">
+                    Re-attempt
+                </button>
+<button class="flex-1 py-3.5 px-6 rounded-full bg-primary text-white font-bold text-sm shadow-[0_0_20px_rgba(88,5,204,0.4)] hover:bg-primary/90 transition-colors">
+                    View Solutions
+                </button>
+</div>
+</div>
+</div>
+</body></html>

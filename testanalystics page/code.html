@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Performance Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0F172A", // Deep Navy
+                        "primary-light": "#1E293B", // Slate 800
+                        "accent-gold": "#F59E0B", // Amber 500
+                        "accent-gold-light": "#FCD34D", // Amber 300
+                        "accent-gold-dark": "#B45309", // Amber 700
+                        "secondary-orange": "#EA580C", // Deep Orange
+                        "background-light": "#F8FAFC", // Slate 50
+                        "background-dark": "#020617", // Slate 950
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "xl": "1rem", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'card': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
+                        'glow-gold': '0 0 40px -10px rgba(245, 158, 11, 0.5)',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #0F172A;
+            --accent-gold: #F59E0B;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }@keyframes confetti-fall {
+            0% { transform: translateY(-10vh) rotateZ(0deg) rotateX(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(105vh) rotateZ(720deg) rotateX(360deg); opacity: 0; }
+        }
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 100;
+        }
+        .confetti-piece {
+            position: absolute;
+            background: linear-gradient(135deg, #FFD700, #FDB931);
+            opacity: 0;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to bottom, #FCD34D, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .metallic-card {
+            background: radial-gradient(circle at top right, #334155, #0F172A);
+            position: relative;
+            overflow: hidden;
+        }
+        .metallic-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            transform: rotate(45deg);
+        }
+    </style>
+<style>
+    body { min-height: max(884px, 100dvh); }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body text-slate-800 dark:text-slate-100 antialiased selection:bg-accent-gold selection:text-white pb-28 relative">
+<div class="confetti-container" id="confetti-container"></div>
+<header class="sticky top-0 z-40 bg-surface-light/80 dark:bg-background-dark/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800 transition-colors duration-300">
+<div class="flex items-center justify-between px-4 py-3 max-w-2xl mx-auto">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white font-display">Analytics Dashboard</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-4 max-w-2xl mx-auto w-full">
+<section class="metallic-card rounded-3xl p-8 shadow-card shadow-glow-primary text-white relative group overflow-hidden border border-slate-700/50">
+<div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-gold/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-accent-gold/30 blur-2xl rounded-full"></div>
+<div class="relative w-48 h-48">
+<svg class="w-full h-full drop-shadow-2xl" fill="none" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="shieldGold" x1="100" x2="100" y1="0" y2="220">
+<stop offset="0%" stop-color="#FCD34D"></stop> 
+<stop offset="40%" stop-color="#F59E0B"></stop> 
+<stop offset="100%" stop-color="#B45309"></stop> 
+</linearGradient>
+<linearGradient gradientUnits="userSpaceOnUse" id="shieldRim" x1="0" x2="200" y1="0" y2="220">
+<stop offset="0%" stop-color="#FFFBEB"></stop>
+<stop offset="50%" stop-color="#F59E0B"></stop>
+<stop offset="100%" stop-color="#78350F"></stop>
+</linearGradient>
+</defs>
+<path d="M100 210C160 180 190 130 190 60L100 10L10 60C10 130 40 180 100 210Z" fill="url(#shieldGold)" stroke="url(#shieldRim)" stroke-width="4"></path>
+<path d="M100 195C145 170 170 130 170 70L100 30L30 70C30 130 55 170 100 195Z" fill="rgba(0,0,0,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pt-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/90 mb-0">Total Score</span>
+<div class="flex items-baseline mt-[-4px]">
+<h1 class="text-7xl font-display font-black text-white drop-shadow-md tracking-tighter">145</h1>
+</div>
+<div class="w-12 h-0.5 bg-white/40 rounded-full my-1"></div>
+<span class="text-xl font-bold text-white/80">200</span>
+</div>
+</div>
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600/50 rounded-full px-5 py-1.5 shadow-lg flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-accent-gold text-sm">emoji_events</span>
+<span class="text-xs font-bold text-white tracking-wide">RANK #425</span>
+</div>
+</div>
+<div class="mt-4 max-w-xs mx-auto">
+<p class="text-sm font-medium text-slate-300 leading-relaxed">
+<span class="text-accent-gold font-bold">Phenomenal!</span> You've secured a spot in the top <span class="text-white font-bold">15%</span> elite percentile.
+                </p>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-emerald-500">target</span>
+</div>
+<div class="flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<div class="bg-emerald-50 dark:bg-emerald-900/20 p-1.5 rounded-lg text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Accuracy</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-display font-bold text-slate-900 dark:text-white">85</span>
+<span class="text-sm font-bold text-slate-400">%</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-[10px] font-semibold text-slate-400 mb-1">
+<span>Precision</span>
+<span class="text-emerald-600">High</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-blue-500">leaderboard</span>
+</div>
+<div class="flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<div class="bg-blue-50 dark:bg-blue-900/20 p-1.5 rounded-lg text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Percentile</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-display font-bold text-slate-900 dark:text-white">96.2</span>
+<span class="text-sm font-bold text-slate-400">%ile</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-[10px] font-semibold text-slate-400 mb-1">
+<span>Vs Peers</span>
+<span class="text-blue-600">Top Tier</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 96.2%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-2 bg-surface-light dark:bg-surface-dark rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-amber-500 text-lg">timer</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Time Efficiency</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-display font-bold text-slate-900 dark:text-white">55<span class="text-lg font-medium text-slate-400">m</span></span>
+<span class="text-xs font-medium text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-0.5 rounded-full">-15m vs Avg</span>
+</div>
+</div>
+<div class="flex items-end gap-1 h-12 w-32">
+<div class="w-1/3 bg-slate-200 dark:bg-slate-700 rounded-t-sm h-[60%]"></div>
+<div class="w-1/3 bg-amber-500 rounded-t-sm h-[40%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">You</div>
+</div>
+<div class="w-1/3 bg-slate-200 dark:bg-slate-700 rounded-t-sm h-[80%]"></div>
+</div>
+</div>
+</section>
+<section class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="w-1 h-6 bg-primary dark:bg-blue-500 rounded-full"></span>
+                Score Distribution
+            </h3>
+<span class="material-symbols-outlined text-slate-400 text-lg">info</span>
+</div>
+<div class="relative h-48 mt-4">
+<div class="absolute inset-0 flex flex-col justify-between text-xs text-slate-400 pointer-events-none">
+<div class="border-b border-dashed border-slate-200 dark:border-slate-700 w-full h-0"></div>
+<div class="border-b border-dashed border-slate-200 dark:border-slate-700 w-full h-0"></div>
+<div class="border-b border-dashed border-slate-200 dark:border-slate-700 w-full h-0"></div>
+<div class="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+</div>
+<div class="absolute inset-0 flex items-end justify-around px-4 pb-0">
+<div class="flex flex-col items-center gap-2 w-16 group">
+<div class="relative w-12 bg-slate-200 dark:bg-slate-700 rounded-t-lg transition-all duration-500 group-hover:bg-slate-300 dark:group-hover:bg-slate-600" style="height: 95px;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold py-1 px-2 rounded">95</div>
+</div>
+<span class="text-xs font-semibold text-slate-500 uppercase">Avg</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-16 group z-10">
+<div class="relative w-14 bg-gradient-to-t from-primary to-blue-600 rounded-t-lg shadow-lg shadow-blue-500/20 transition-all duration-500 group-hover:scale-105" style="height: 145px;">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-bold py-1 px-3 rounded-lg shadow-md border border-slate-700">145</div>
+<div class="absolute top-0 left-0 right-0 h-1 bg-accent-gold rounded-t-lg opacity-80"></div>
+</div>
+<span class="text-xs font-bold text-primary dark:text-white uppercase tracking-wider">You</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-16 group">
+<div class="relative w-12 bg-slate-200 dark:bg-slate-700 rounded-t-lg transition-all duration-500 group-hover:bg-slate-300 dark:group-hover:bg-slate-600" style="height: 180px;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold py-1 px-2 rounded">180</div>
+</div>
+<span class="text-xs font-semibold text-slate-500 uppercase">Top</span>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<h3 class="font-display font-bold text-slate-900 dark:text-white text-lg px-2">Section Analysis</h3>
+<details class="group bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden" open="">
+<summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Mathematics</h4>
+<p class="text-xs text-slate-500 mt-0.5">45/50 Marks • <span class="text-emerald-500 font-medium">Strong</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-6 pt-2 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-row items-center gap-6">
+<div class="relative size-24 shrink-0">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36">
+<path class="text-slate-100 dark:text-slate-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-emerald-500 drop-shadow-sm" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="90, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white">90%</span>
+</div>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex items-center text-xs gap-3">
+<span class="w-16 font-semibold text-slate-500">Correct</span>
+<div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full w-[90%]"></div>
+</div>
+<span class="font-bold text-slate-900 dark:text-white">18</span>
+</div>
+<div class="flex items-center text-xs gap-3">
+<span class="w-16 font-semibold text-slate-500">Incorrect</span>
+<div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-rose-500 rounded-full w-[15%]"></div>
+</div>
+<span class="font-bold text-slate-900 dark:text-white">3</span>
+</div>
+<div class="flex items-center text-xs gap-3">
+<span class="w-16 font-semibold text-slate-500">Skipped</span>
+<div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-slate-400 rounded-full w-[5%]"></div>
+</div>
+<span class="font-bold text-slate-900 dark:text-white">1</span>
+</div>
+</div>
+</div>
+</div>
+</details>
+<details class="group bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-xl bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">English Language</h4>
+<p class="text-xs text-slate-500 mt-0.5">38/50 Marks • <span class="text-orange-500 font-medium">Avg</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-6 pt-2 border-t border-slate-100 dark:border-slate-800">
+<p class="text-sm text-slate-600">Breakdown hidden for brevity.</p>
+</div>
+</details>
+<details class="group bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-xl bg-teal-50 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">General Studies</h4>
+<p class="text-xs text-slate-500 mt-0.5">62/100 Marks • <span class="text-teal-500 font-medium">Good</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-6 pt-2 border-t border-slate-100 dark:border-slate-800">
+<p class="text-sm text-slate-600">Breakdown hidden for brevity.</p>
+</div>
+</details>
+</section>
+<section class="bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/10 dark:to-orange-900/10 rounded-2xl p-6 border border-rose-100 dark:border-rose-900/30">
+<h3 class="font-display font-bold text-rose-900 dark:text-rose-100 flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined">crisis_alert</span>
+            Focus Areas
+        </h3>
+<div class="space-y-3">
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-rose-100 dark:border-slate-700 flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-800 dark:text-white">Algebraic Equations</span>
+<span class="text-[10px] font-semibold text-rose-500 uppercase tracking-wide mt-0.5">Math • 3 Errors</span>
+</div>
+<button class="size-8 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center hover:bg-rose-100">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-rose-100 dark:border-slate-700 flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-800 dark:text-white">Reading Comprehension</span>
+<span class="text-[10px] font-semibold text-rose-500 uppercase tracking-wide mt-0.5">English • 5 Errors</span>
+</div>
+<button class="size-8 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center hover:bg-rose-100">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-6 bg-surface-light/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 z-50">
+<div class="max-w-2xl mx-auto flex gap-3">
+<button class="flex-1 py-3.5 px-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-700 dark:text-slate-200 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+            Review Answers
+        </button>
+<button class="flex-1 py-3.5 px-4 rounded-xl bg-secondary-orange shadow-lg shadow-orange-500/20 font-bold text-white text-sm hover:bg-orange-700 transition-colors">
+            Practice Similar Tests
+        </button>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Confetti logic
+        const confettiContainer = document.getElementById('confetti-container');
+        const colors = ['#FFD700', '#FDB931', '#C0C0C0', '#E5E4E2'];
+        const shapes = ['rect', 'tri']; // simplified representation
+        // Check if previously played in session (optional, removing check to ensure it plays for demo)
+        // const hasPlayed = sessionStorage.getItem('confettiPlayed');
+        const hasPlayed = false;
+        if (!hasPlayed) {
+            for (let i = 0; i < 60; i++) {
+                const piece = document.createElement('div');
+                piece.classList.add('confetti-piece');
+                // Randomize properties
+                const size = Math.random() * 8 + 6 + 'px';
+                const left = Math.random() * 100 + '%';
+                const animDuration = Math.random() * 2 + 2 + 's';
+                const animDelay = Math.random() * 1 + 's';
+                const bg = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.width = Math.random() > 0.5 ? size : '4px';
+                piece.style.height = size;
+                piece.style.left = left;
+                piece.style.backgroundColor = bg;
+                // Add varied animation
+                piece.style.animation = `confetti-fall ${animDuration} linear forwards ${animDelay}`;
+                confettiContainer.appendChild(piece);
+            }
+            // Cleanup after animation
+            setTimeout(() => {
+                confettiContainer.innerHTML = '';
+            }, 6000);
+            sessionStorage.setItem('confettiPlayed', 'true');
+        }
+    });
+</script>
+
+</body></html>

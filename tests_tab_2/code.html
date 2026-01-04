@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tests Tab UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700d1",
+                        "primary-light": "#7c2ae8",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a2235",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }@keyframes blink {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .animate-blink {
+            animation: blink 1.5s infinite ease-in-out;
+        }#view-explore, #view-report { display: none; }body:has(#tab-explore:checked) #view-explore { display: flex; }body:has(#tab-report:checked) #view-report { display: flex; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#130c1d] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary/20">
+<div class="relative flex h-full w-full max-w-md mx-auto flex-col min-h-screen border-x border-gray-100 dark:border-gray-800 bg-background-light dark:bg-background-dark shadow-2xl">
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[#130c1d] dark:text-white text-[24px]">menu</span>
+</button>
+<h2 class="text-[#130c1d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Test Series</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors relative">
+<span class="material-symbols-outlined text-[#130c1d] dark:text-white text-[24px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white dark:border-background-dark"></span>
+</button>
+</div>
+<div class="flex px-4 py-2 pb-4">
+<div class="flex h-12 flex-1 items-center justify-center rounded-xl bg-[#ece6f4] dark:bg-[#2a2235] p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg has-[:checked]:bg-white dark:has-[:checked]:bg-[#3e344e] has-[:checked]:shadow-sm transition-all duration-200">
+<span class="text-primary dark:text-primary-light text-sm font-bold leading-normal">Explore</span>
+<input checked="" class="invisible w-0 absolute" id="tab-explore" name="view_toggle" type="radio" value="Explore"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg has-[:checked]:bg-white dark:has-[:checked]:bg-[#3e344e] has-[:checked]:shadow-sm transition-all duration-200 opacity-60 hover:opacity-100">
+<span class="text-[#6b45a1] dark:text-[#a58cc9] text-sm font-medium leading-normal">My Report</span>
+<input class="invisible w-0 absolute" id="tab-report" name="view_toggle" type="radio" value="My Report"/>
+</label>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-6 pb-24 overflow-y-auto scrollbar-hide">
+<div class="flex flex-col gap-6" id="view-explore">
+<div class="px-4">
+<div class="flex items-center justify-between mb-3 pt-2">
+<h2 class="text-[#130c1d] dark:text-white text-xl font-bold leading-tight flex items-center gap-2">
+                        Live Now
+                        <span class="flex h-2 w-2 rounded-full bg-red-500 animate-blink"></span>
+</h2>
+</div>
+<div class="group relative flex flex-col items-stretch justify-start rounded-2xl bg-white dark:bg-[#2a2235] shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-none overflow-hidden hover:shadow-[0_8px_30px_rgba(87,0,209,0.15)] transition-shadow duration-300">
+<div class="w-full h-32 bg-cover bg-center relative" data-alt="Abstract purple geometric pattern background for test banner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs5_oVPD9PC4WEmTzhG02HKofnrhUNxt6JC_jUt_Fao2fHrRcWY-kkUiolikEHFV2cqoxh3Y18KpdxDgrcexj1YSb8ycWhBDQqIaCWHWDv6s802WUW2OL7AOKxHUQzplgVcHc5hFtH1i8Dv998Q5LeI39oImRGKpVVwtiwVNoN1sIPutRSHyQiO6lnDHs7BYFxwvVjc9e3cEt3PErTp2DrlSjLEhaAQN792SrQTl9cSuTbNI2r7SV9KLrgwW1mwA4AFUWwbB_pg0w");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-4 text-white">
+<span class="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Ending Soon</span>
+<h3 class="text-lg font-bold">All India Live Mock - RRB NTPC</h3>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-medium bg-primary/10 px-3 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span class="text-sm font-bold tracking-wide">02:45:00</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400 font-medium">15k+ Students Attempting</span>
+</div>
+<button class="w-full flex items-center justify-center rounded-xl h-10 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-lg shadow-blue-600/30 transition-all active:scale-[0.98]">
+                            Attempt
+                        </button>
+</div>
+</div>
+</div>
+<div class="px-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-[#130c1d] dark:text-white text-xl font-bold leading-tight">Daily Free Quizzes</h2>
+<a class="text-primary text-sm font-semibold" href="#">View All</a>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col items-center justify-between p-3 rounded-2xl bg-white dark:bg-[#2a2235] shadow-sm border border-gray-100 dark:border-gray-800 gap-2 text-center h-32 group hover:border-primary/50 transition-colors cursor-pointer">
+<div class="size-10 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<span class="text-xs font-bold text-gray-800 dark:text-gray-200">Maths</span>
+<button class="text-[10px] font-bold text-primary bg-primary/10 w-full py-1.5 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">Attempt</button>
+</div>
+<div class="flex flex-col items-center justify-between p-3 rounded-2xl bg-white dark:bg-[#2a2235] shadow-sm border border-gray-100 dark:border-gray-800 gap-2 text-center h-32 group hover:border-primary/50 transition-colors cursor-pointer">
+<div class="size-10 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<span class="text-xs font-bold text-gray-800 dark:text-gray-200">English</span>
+<button class="text-[10px] font-bold text-primary bg-primary/10 w-full py-1.5 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">Attempt</button>
+</div>
+<div class="flex flex-col items-center justify-between p-3 rounded-2xl bg-white dark:bg-[#2a2235] shadow-sm border border-gray-100 dark:border-gray-800 gap-2 text-center h-32 group hover:border-primary/50 transition-colors cursor-pointer">
+<div class="size-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<span class="text-xs font-bold text-gray-800 dark:text-gray-200">Logic</span>
+<button class="text-[10px] font-bold text-primary bg-primary/10 w-full py-1.5 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">Attempt</button>
+</div>
+</div>
+</div>
+<div class="px-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-[#130c1d] dark:text-white text-xl font-bold leading-tight">Full Test Series</h2>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center p-3 rounded-2xl bg-white dark:bg-[#2a2235] shadow-sm active:scale-[0.99] transition-transform cursor-pointer">
+<div class="size-14 rounded-xl bg-gray-100 dark:bg-gray-800 bg-cover bg-center shrink-0" data-alt="Train icon for railway exams" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXTR1DGOKSEDLFsDgHmiCD5K10HgyW_JmL_DzzvIAwz4dHT2GYaUYEIKu5znCi6uTRFaMujum_IprWa0Se5npHolIy8P68eXlKp1y7XqJso1dEg36pnDMs9iwIW6r6QSdKPJ-rNAb7gxzzfSJXsuRN1Ne0lH3yauPnHLXuN42yVy9U36UQMthMD95lRy_hVG9Z6JTxky42I29FAYQNwAaDSHWApIwlKNNoKKrpVSDaQ-DfAMCljBbgYeK_dFIm8I4vwfLTOsYR9W4");'></div>
+<div class="ml-3 flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-sm text-[#130c1d] dark:text-white truncate">RRB NTPC Mains</h3>
+<span class="material-symbols-outlined text-red-500 text-[18px]">lock</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">50 Total Tests • 2 Free</p>
+<div class="mt-2 w-full bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[25%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center p-3 rounded-2xl bg-white dark:bg-[#2a2235] shadow-sm active:scale-[0.99] transition-transform cursor-pointer relative overflow-hidden">
+<div class="size-14 rounded-xl bg-gray-100 dark:bg-gray-800 bg-cover bg-center shrink-0 grayscale opacity-80" data-alt="Government building icon for SSC exams" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRqEdMQnYJvIVxpQEFu0tK5M-8ZFIQPlasNMr88_DrBIVaUvndueTCFbRcSwatG9-5Jt1pcyYcm5dEog4IL6F67whSNWKRSF-XXHblx0X84ONecTRW8TnzgmxwYScjshfdG9ayLhgN46CeDYZir6P5tbg2UyJb5ztE7QHapuQGN1SKN7xhuE5AQPMt7LS0IYNG64kC40oawVQGShKF9zgGgGqtcOtVyqmnIk6bwy1Fo9LQyEmxMFHY1-srPMKFvpsCoAtzNFMQEDw");'></div>
+<div class="ml-3 flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-sm text-[#130c1d] dark:text-white truncate">SSC CGL Tier 1</h3>
+<span class="material-symbols-outlined text-red-500 text-[18px]">lock</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">20 Total Tests • Premium</p>
+<div class="mt-2 w-full bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-gray-300 dark:bg-gray-600 h-full w-0 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 px-4 pt-4" id="view-report">
+<div class="grid grid-cols-2 gap-3">
+<div class="col-span-1 rounded-2xl bg-white dark:bg-[#2a2235] p-4 flex flex-col items-center justify-center shadow-sm relative overflow-hidden">
+<h3 class="text-xs text-gray-500 dark:text-gray-400 font-medium mb-3">Average Accuracy</h3>
+<div class="relative size-24">
+<div class="absolute inset-0 rounded-full" style="background: conic-gradient(var(--primary-color, #5700d1) 0% 72%, #ece6f4 72% 100%);"></div>
+<div class="absolute inset-2 rounded-full bg-white dark:bg-[#2a2235] flex items-center justify-center flex-col">
+<span class="text-xl font-bold text-primary">72<span class="text-sm">%</span></span>
+</div>
+</div>
+<span class="text-[10px] text-gray-400 mt-2">Last 30 Days</span>
+</div>
+<div class="col-span-1 rounded-2xl bg-white dark:bg-[#2a2235] p-4 flex flex-col justify-between shadow-sm">
+<h3 class="text-xs text-gray-500 dark:text-gray-400 font-medium mb-2">Comparison</h3>
+<div class="flex items-end justify-between gap-2 h-24 pb-1 w-full px-1">
+<div class="w-6 flex flex-col items-center gap-1 group">
+<span class="text-[9px] font-bold text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">50</span>
+<div class="w-full bg-gray-300 dark:bg-gray-600 rounded-t-md" style="height: 50%;"></div>
+<span class="text-[9px] text-gray-400">Avg</span>
+</div>
+<div class="w-6 flex flex-col items-center gap-1 group">
+<span class="text-[9px] font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">65</span>
+<div class="w-full bg-blue-500 rounded-t-md relative" style="height: 65%;"></div>
+<span class="text-[9px] text-gray-400">You</span>
+</div>
+<div class="w-6 flex flex-col items-center gap-1 group">
+<span class="text-[9px] font-bold text-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity">88</span>
+<div class="w-full bg-yellow-400 rounded-t-md" style="height: 88%;"></div>
+<span class="text-[9px] text-gray-400">Top</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-[#130c1d] dark:text-white text-xl font-bold leading-tight mb-3">Recent Attempts</h2>
+<div class="bg-white dark:bg-[#2a2235] rounded-2xl shadow-sm divide-y divide-gray-50 dark:divide-gray-800">
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="text-sm font-bold text-[#130c1d] dark:text-white">Maths Daily Quiz #4</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-green-600 bg-green-50 dark:bg-green-900/20 px-1.5 py-0.5 rounded font-medium">Score: 18/20</span>
+<span class="text-xs text-gray-400">Today</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary flex items-center hover:underline">
+                                Solution <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="text-sm font-bold text-[#130c1d] dark:text-white">Reasoning Mock 02</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-orange-600 bg-orange-50 dark:bg-orange-900/20 px-1.5 py-0.5 rounded font-medium">Score: 12/25</span>
+<span class="text-xs text-gray-400">Yesterday</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary flex items-center hover:underline">
+                                Solution <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="h-10"></div>
+</div>
+<div class="sticky bottom-0 bg-white dark:bg-[#2a2235] border-t border-gray-100 dark:border-gray-800 p-2 flex justify-around items-center z-50">
+<div class="flex flex-col items-center gap-1 p-2 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined fill-1">quiz</span>
+<span class="text-[10px] font-medium">Tests</span>
+</div>
+<div class="flex flex-col items-center gap-1 p-2 text-gray-400">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px] font-medium">Courses</span>
+</div>
+<div class="flex flex-col items-center gap-1 p-2 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</div>
+</div>
+
+</body></html>

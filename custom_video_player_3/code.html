@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Custom Video Player</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5700d1",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#170f23",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#231a33",
+                        "pinned-bg-light": "#fff8e1",
+                        "pinned-bg-dark": "#3e3221",
+                        "pinned-border-light": "#ffecb3",
+                        "pinned-border-dark": "#5d4b31",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#130c1d] dark:text-[#eadaff] font-display overflow-hidden">
+<div class="relative flex h-screen w-full flex-col group/design-root overflow-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<div class="relative w-full aspect-video bg-black shrink-0 group/video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-90" data-alt="Math teacher writing calculus formulas on a green chalkboard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtM45u29y9AkgfGgU30BHGtDfnI2-IipfhfaM9RKP-GbWk4fxfS_wPyVEGxZszu-5hm2zzcO94eShhETEiQArIQZD2Ewnnv7Cvbx9XJV0YbZnSzz6uzfRPRjAMzjl88Hk6pUgz4tS50NQdB23m2dUjAdFOJ8Ubs6ZFJrITjihi_3i7bfi3CCd6jAnzmSMKBbOYx1FuzRNcLTW95bmH4gbSK9mWpq0lEkuylT5_G6sx6tgJAQq192Nxk34kgrki8PSUPZuTggxEGeQ');">
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover/video:bg-black/60 transition-colors duration-300"></div>
+<div class="absolute inset-0 flex flex-col justify-between p-3 z-10">
+<div class="flex items-center justify-between">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-white/10 text-white transition">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center">
+<button aria-label="Bookmark" class="flex items-center justify-center size-10 rounded-full hover:bg-white/10 text-white transition">
+<span class="material-symbols-outlined text-[24px]">bookmark_border</span>
+</button>
+<button aria-label="Download for offline" class="group/download relative flex items-center justify-center size-10 rounded-full hover:bg-white/10 text-white transition">
+<svg class="absolute inset-0 size-full -rotate-90 p-1 opacity-0 group-active/download:opacity-100 transition-opacity duration-200" viewBox="0 0 36 36">
+<path class="text-white/20" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="30, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="material-symbols-outlined text-[24px]">download_for_offline</span>
+</button>
+<button class="flex items-center justify-center h-10 px-2 rounded-full hover:bg-white/10 text-white text-xs font-bold transition">
+    720p
+</button>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-white/10 text-white text-xs font-bold transition">
+                            1x
+                        </button>
+<button aria-label="Settings" class="flex items-center justify-center size-10 rounded-full hover:bg-white/10 text-white transition">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+<button aria-label="Fullscreen" class="flex items-center justify-center size-10 rounded-full hover:bg-white/10 text-white transition">
+<span class="material-symbols-outlined text-[24px]">fullscreen</span>
+</button>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center gap-8 pointer-events-none">
+<button class="group/rewind pointer-events-auto flex items-center justify-center size-12 rounded-full text-white/90 hover:bg-white/10 transition-colors active:scale-90">
+<span class="material-symbols-outlined text-[36px]">replay_10</span>
+</button>
+<button class="flex items-center justify-center rounded-full size-16 bg-white/20 text-white pointer-events-auto backdrop-blur-md border border-white/30 shadow-lg hover:bg-white/30 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[40px] ml-1">play_arrow</span>
+</button>
+<button class="group/forward pointer-events-auto flex items-center justify-center size-12 rounded-full text-white/90 hover:bg-white/10 transition-colors active:scale-90">
+<span class="material-symbols-outlined text-[36px]">forward_10</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 mt-auto">
+<div class="flex items-center justify-between text-white/90 gap-3">
+<span class="text-xs font-medium w-10">12:30</span>
+<div class="relative h-1 w-full bg-white/30 rounded-full cursor-pointer group/scrubber flex items-center">
+<div class="absolute left-0 top-0 bottom-0 w-[28%] bg-primary rounded-full h-full">
+<div class="absolute -right-1.5 top-1/2 -translate-y-1/2 size-3 bg-white rounded-full shadow-md scale-100 group-hover/scrubber:scale-125 transition-transform"></div>
+</div>
+</div>
+<span class="text-xs font-medium w-10 text-right">45:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark border-b border-[#e5e0eb] dark:border-[#382e4a] shrink-0 z-20">
+<div class="flex px-4 justify-between">
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-[#130c1d] dark:text-white pb-[11px] pt-4 flex-1">
+<span class="text-sm font-bold leading-normal tracking-[0.015em]">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#6b45a1] dark:text-[#a08cc0] pb-[11px] pt-4 flex-1 hover:text-primary dark:hover:text-white transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em]">PDF Notes</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#6b45a1] dark:text-[#a08cc0] pb-[11px] pt-4 flex-1 hover:text-primary dark:hover:text-white transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em]">Quiz</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 space-y-3 pb-24 scroll-smooth">
+<div class="flex w-full flex-row items-start justify-start gap-2 animate-fade-in-up">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6 shrink-0 border-2 border-primary" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCirHXPlehplLu-5mgzfY1VhyqlVDo_2R2mUN4lgWQpBILL4uM7aMABFbsvrl-cpY3f0Kejfj2xp-6_Wus1g1TblQCJOtw0kjnv0ya05xvgm_vDqr9dj434TNJnBCVTNWvrQCOsWNCe6ADPwYba2E2sJ29NV0Jkx5UkiYqgIRHKPpCDxlo3O4RAyiZOrNnDwx7mxfFM0NV5Jn9blYlKi2gCZ_GLVbP5VUhUecJUDe0D0jXu5m8bZHUptM8pXASOcNI5bxNTF-kLzWw');"></div>
+<div class="flex h-full flex-1 flex-col items-start justify-start bg-pinned-bg-light dark:bg-pinned-bg-dark border border-pinned-border-light dark:border-pinned-border-dark p-2.5 rounded-lg rounded-tl-none shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-1">
+<span class="material-symbols-outlined text-[16px] text-primary opacity-60">push_pin</span>
+</div>
+<div class="flex w-full flex-row items-center justify-between gap-x-2 mb-0.5 pr-5">
+<p class="text-primary dark:text-primary-light text-sm font-bold leading-normal tracking-[0.015em]">Instructor</p>
+<p class="text-[#6b45a1] dark:text-[#a08cc0] text-[10px] font-normal opacity-80">10:30 AM</p>
+</div>
+<p class="text-[#3c2f4e] dark:text-[#d1c4e0] text-sm font-medium leading-relaxed">Welcome class! Today we will cover Integral Calculus. Please download the PDF notes.</p>
+</div>
+</div>
+<div class="flex w-full flex-row items-start justify-start gap-2 animate-fade-in-up" style="animation-delay: 100ms;">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6 shrink-0 border border-white/10" data-alt="Portrait of Rohan Gupta" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCirHXPlehplLu-5mgzfY1VhyqlVDo_2R2mUN4lgWQpBILL4uM7aMABFbsvrl-cpY3f0Kejfj2xp-6_Wus1g1TblQCJOtw0kjnv0ya05xvgm_vDqr9dj434TNJnBCVTNWvrQCOsWNCe6ADPwYba2E2sJ29NV0Jkx5UkiYqgIRHKPpCDxlo3O4RAyiZOrNnDwx7mxfFM0NV5Jn9blYlKi2gCZ_GLVbP5VUhUecJUDe0D0jXu5m8bZHUptM8pXASOcNI5bxNTF-kLzWw');"></div>
+<div class="flex h-full flex-1 flex-col items-start justify-start bg-white dark:bg-surface-dark p-2 rounded-lg rounded-tl-none shadow-sm">
+<div class="flex w-full flex-row items-center justify-between gap-x-2 mb-0.5">
+<p class="text-[#130c1d] dark:text-white text-xs font-bold leading-normal tracking-[0.015em]">Rohan Gupta</p>
+<p class="text-[#6b45a1] dark:text-[#a08cc0] text-[10px] font-normal opacity-80">10:32 AM</p>
+</div>
+<p class="text-[#3c2f4e] dark:text-[#d1c4e0] text-xs font-normal leading-relaxed">Sir, can you please repeat the last step of the derivation? I missed the substitution part.</p>
+</div>
+</div>
+<div class="flex w-full flex-row items-start justify-start gap-2 animate-fade-in-up" style="animation-delay: 200ms;">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6 shrink-0 border border-white/10" data-alt="Portrait of Anjali Verma" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCr50Dk2oF86pjc-Rgy5DlydWq8t3OAWN6C9wmPZLx8ZvEParYEmi9S3GJ39H18n1FKcf_y-oVfejivazeAo5hkmO_OSnCUFV3MrDiDabgcuPWc5JqRzMrMdBHe0MyZdU6PdBJBaOIUHUHOwc3YTzTMiOfyThu4HP2KVPPm0QspcOun9W-4dlLzivfbHzEEfbPRiwq3T486e8_JAkaPFQG91DlPkt5YXzDVjU5EHye1E_2ou7PvfSDETYw3GI7_t1114g5U_LjC_fQ');"></div>
+<div class="flex h-full flex-1 flex-col items-start justify-start bg-white dark:bg-surface-dark p-2 rounded-lg rounded-tl-none shadow-sm">
+<div class="flex w-full flex-row items-center justify-between gap-x-2 mb-0.5">
+<p class="text-[#130c1d] dark:text-white text-xs font-bold leading-normal tracking-[0.015em]">Anjali Verma</p>
+<p class="text-[#6b45a1] dark:text-[#a08cc0] text-[10px] font-normal opacity-80">10:33 AM</p>
+</div>
+<p class="text-[#3c2f4e] dark:text-[#d1c4e0] text-xs font-normal leading-relaxed">The formula is actually derived from Euler's theorem, check page 45 of the handout.</p>
+</div>
+</div>
+<div class="flex w-full flex-row items-start justify-start gap-2 animate-fade-in-up" style="animation-delay: 300ms;">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6 shrink-0 border border-white/10" data-alt="Portrait of Vikram Singh" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDb6nWX4KtYxZr7RgtFvFD3ouiPwrpq4qoDakvQn6rqAP37yRBs126412XUN2N399Bjws0h76XK8fPgy7maA1jHyoC6_vjGfZMEenFmRPmACdFCJAIBTfSRz7vp46whA2ojD5daZJz5gnE-0s2JAgMoaj35d-nHPkuZmizIprdUNFLJR4bbsYfVOwf-94HkwqXnSGgr_zib5ToRHT5zk0rXUZLfLuvZMo4fMfYt9gz2VB9wVHk0OtQBw9GJQJfxOqKBJQE3g_oBf-A');"></div>
+<div class="flex h-full flex-1 flex-col items-start justify-start bg-white dark:bg-surface-dark p-2 rounded-lg rounded-tl-none shadow-sm">
+<div class="flex w-full flex-row items-center justify-between gap-x-2 mb-0.5">
+<p class="text-[#130c1d] dark:text-white text-xs font-bold leading-normal tracking-[0.015em]">Vikram Singh</p>
+<p class="text-[#6b45a1] dark:text-[#a08cc0] text-[10px] font-normal opacity-80">10:34 AM</p>
+</div>
+<p class="text-[#3c2f4e] dark:text-[#d1c4e0] text-xs font-normal leading-relaxed">Thanks Anjali! That makes sense now. 👍</p>
+</div>
+</div>
+<div class="flex w-full flex-row items-start justify-start gap-2 animate-fade-in-up" style="animation-delay: 400ms;">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6 shrink-0 border border-white/10" data-alt="Portrait of Priya K" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGhzpNXeWlMWuyWbBbXO4sTqGpTuusHRTivx3nLtuxf18jfZu8IovldfDx87lh-T-MYF5Oyb4Toj1cW758d9WgPPwMgQb1dw3fQXn1PGD_t-V9Cwm8Mxu1JYurS6vLSoM60ptMKCPXyNnzUU5FLcSRtpPYgiAArVWckjYsg0AN_A6pyS7GX-uHrE1kDqu_l2fry3q90-gjXpwiovkclYfYhziJIRT6OK0w_GEvgkLgrZL-hE2sisff0cIq03Dt3SZvqtvqsQkDTb0');"></div>
+<div class="flex h-full flex-1 flex-col items-start justify-start bg-white dark:bg-surface-dark p-2 rounded-lg rounded-tl-none shadow-sm">
+<div class="flex w-full flex-row items-center justify-between gap-x-2 mb-0.5">
+<p class="text-[#130c1d] dark:text-white text-xs font-bold leading-normal tracking-[0.015em]">Priya K.</p>
+<p class="text-[#6b45a1] dark:text-[#a08cc0] text-[10px] font-normal opacity-80">10:36 AM</p>
+</div>
+<p class="text-[#3c2f4e] dark:text-[#d1c4e0] text-xs font-normal leading-relaxed">Is the PDF downloadable?</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 inset-x-0 p-4 bg-surface-light dark:bg-surface-dark border-t border-[#e5e0eb] dark:border-[#382e4a] z-30">
+<div class="flex items-center gap-3 bg-background-light dark:bg-background-dark p-1.5 pr-2 rounded-full border border-transparent focus-within:border-primary/50 transition-colors">
+<div class="flex items-center justify-center size-9 rounded-full text-[#6b45a1] dark:text-[#a08cc0] hover:bg-gray-200 dark:hover:bg-white/10 cursor-pointer transition">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm text-[#130c1d] dark:text-white placeholder-[#6b45a1]/60 dark:placeholder-[#a08cc0]/60" placeholder="Type your doubt here..." type="text"/>
+<button class="flex items-center justify-center size-10 rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors transform active:scale-95">
+<span class="material-symbols-outlined text-[20px] ml-0.5">send</span>
+</button>
+</div>
+</div>
+</div>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+</body></html>
